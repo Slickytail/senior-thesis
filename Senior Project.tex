@@ -1,0 +1,67 @@
+\documentclass[11pt]{report}
+
+% Language and font stuff
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage[final]{microtype}
+
+\usepackage[bookmarks]{hyperref}
+
+% Formatting options
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% Math commands
+\usepackage{amsmath,amssymb,amsthm}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lemma}[prop]{Lemma}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\lspan}{span}
+\DeclareMathOperator{\tb}{tb}
+\DeclareMathOperator{\rot}{r}
+\DeclareMathOperator{\writhe}{w}
+\DeclareMathOperator{\cusps}{c}
+\DeclareMathOperator{\tpm}{T}
+
+% Bibliography options
+\usepackage[backend=biber,
+            hyperref,
+            doi=false,
+            sorting=none,
+            style=alphabetic]{biblatex}
+\addbibresource{sources.bib}
+
+% Figure options
+\usepackage{graphicx}
+\usepackage{chngcntr}
+\counterwithin{figure}{subsection}
+
+
+\begin{document}
+
+\include{chapters/titlepage}
+\pagenumbering{roman}
+
+\tableofcontents
+
+\pagenumbering{arabic}
+
+\include{chapters/contents}
+
+\appendix
+
+\printbibliography
+\end{document}
