@@ -1,0 +1,740 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28032,        732]
+NotebookOptionsPosition[     24833,        674]
+NotebookOutlinePosition[     25260,        691]
+CellTagsIndexPosition[     25217,        688]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Kauffman Polynomials of Pretzel Knots", "Title",
+ CellChangeTimes->{{3.8217047470935698`*^9, 3.8217047537131853`*^9}, {
+  3.821704951196395*^9, 
+  3.8217049525911293`*^9}},ExpressionUUID->"d0ce636a-765f-4f4f-97af-\
+9ba0d1c001d9"],
+
+Cell["By Raphael Walker", "Author",
+ CellChangeTimes->{{3.82170894750887*^9, 
+  3.82170895479373*^9}},ExpressionUUID->"ac02ed66-2232-493e-bc2d-\
+bc6dd1c71edb"],
+
+Cell["\<\
+Making use of Lu and Zhong\[CloseCurlyQuote]s formula for the Dubrovnik \
+Polynomial and Lickorish\[CloseCurlyQuote]s relation between the Dubrovnik \
+polynomial and the L-polynomial. In the various functions we will define, q \
+is assumed to be a list of twist numbers referring to the Pretzel knot \
+$P(q_1, ... q_n)$.\
+\>", "Text",
+ CellChangeTimes->{{3.8217089917769527`*^9, 3.8217090441389093`*^9}, {
+  3.821714993308564*^9, 
+  3.821715052457664*^9}},ExpressionUUID->"3ef5f994-648e-4033-bfb4-\
+b09e01ada0fa"],
+
+Cell[CellGroupData[{
+
+Cell["Lu and Zhong\[CloseCurlyQuote]s Dubrovnik Polynomial", "Subsection",
+ CellChangeTimes->{{3.821708751706974*^9, 3.821708752811204*^9}, {
+  3.821708852880951*^9, 3.821708903382312*^9}, {3.821709050467751*^9, 
+  3.821709053818269*^9}, {3.821716026762429*^9, 
+  3.821716027753407*^9}},ExpressionUUID->"5480c8bb-30b0-4dce-b9e2-\
+4e478d990964"],
+
+Cell["\<\
+Lu and Zhong define the Dubrovnik polynomial of the unknot to be $\\delta$ \
+rather than 1. It is trivial to undo this by simply dividing the resulting \
+polynomial by $\\delta$. Moreover, they replace $z$ by $s - s^{-1}$. While \
+this substitution is mathematically invertible, it is no simple matter to do \
+it computationally. We achieve this by solving the equation $z = s - s^{-1}$ \
+for $s$, substituting in this value, and letting Mathematica handle the \
+simplification.\
+\>", "Text",
+ CellChangeTimes->{{3.821709345350205*^9, 3.82170951326897*^9}, {
+  3.821709577067636*^9, 3.821709741220099*^9}, {3.821716042014572*^9, 
+  3.82171607660441*^9}},ExpressionUUID->"7eb76a58-58f6-497e-8e23-\
+f0db2500ad40"],
+
+Cell["\<\
+First we define some shorthand, and write out the base change matrix.\
+\>", "Text",
+ CellChangeTimes->{{3.8217105645873413`*^9, 3.821710570909565*^9}, {
+  3.8217106058546352`*^9, 
+  3.821710613191655*^9}},ExpressionUUID->"b1dc1581-3345-45e4-927e-\
+e7d52da680da"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ai", " ", ":=", " ", 
+   RowBox[{"1", "/", "a"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"si", " ", ":=", " ", 
+   RowBox[{"1", "/", "s"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d", "   ", ":=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", " ", "-", " ", "ai"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"s", " ", "-", " ", "si"}], ")"}]}], " ", "+", " ", "1"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"di", " ", ":=", " ", 
+   RowBox[{"1", "/", "d"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"M", "   ", "=", " ", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"si", " ", "-", " ", 
+          RowBox[{"di", "*", "si"}], " ", "-", " ", 
+          RowBox[{"di", "*", "ai"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"s", " ", "+", " ", "si"}], ")"}]}], ",", " ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "si"}], " ", "-", " ", 
+          RowBox[{"di", "*", "s"}], " ", "+", " ", 
+          RowBox[{"di", "*", "ai"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"s", " ", "+", " ", "si"}], ")"}]}], ",", " ", "di"}], "}"}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "s"}], " ", "-", " ", 
+          RowBox[{"di", "*", "si"}], " ", "-", " ", 
+          RowBox[{"di", "*", "ai"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"s", " ", "+", " ", "si"}], ")"}]}], ",", " ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"s", " ", "-", " ", 
+          RowBox[{"di", "*", "s"}], " ", "+", " ", 
+          RowBox[{"di", "*", "ai"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"s", " ", "+", " ", "si"}], ")"}]}], ",", " ", "di"}], "}"}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"si", "*", "d"}], " ", "+", " ", "a", " ", "-", " ", 
+          RowBox[{"di", "*", "si"}], " ", "-", " ", 
+          RowBox[{"di", "*", "ai"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"s", " ", "+", "si"}], ")"}]}], ",", " ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"s", "*", "d"}], " ", "-", " ", "a", " ", "-", " ", 
+          RowBox[{"di", "*", "s"}], " ", "+", " ", 
+          RowBox[{"di", "*", "ai"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"s", "+", "si"}], ")"}]}], ",", " ", "di"}], "}"}]}], 
+    "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.821710617726368*^9, 3.8217108638093348`*^9}, 
+   3.8217112128452263`*^9, {3.821712975778503*^9, 3.821713002444549*^9}, 
+   3.822128891452457*^9, {3.8221292969919777`*^9, 3.822129297128587*^9}, {
+   3.822129424601782*^9, 3.82212942557407*^9}, {3.82213338172532*^9, 
+   3.8221333858795013`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"b28ecfc6-2624-4935-8bae-3bc97bad8d5a"],
+
+Cell["\<\
+Now we can write out the computation for the Lu-Zhong polynomial.\
+\>", "Text",
+ CellChangeTimes->{{3.821710883376148*^9, 
+  3.8217109172032623`*^9}},ExpressionUUID->"fda4e5be-98d6-476b-b39c-\
+ce5dd7c0ad94"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LuZhong", "[", "q_", "]"}], " ", ":=", "\[IndentingNewLine]", "\t", 
+  RowBox[{
+   RowBox[{"M", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], " ", 
+   ".", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Times", "@@", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"M", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}],
+           " ", ".", " ", 
+          SuperscriptBox[
+           RowBox[{"{", 
+            RowBox[{"s", ",", 
+             RowBox[{"-", "si"}], ",", "ai"}], "}"}], "#1"]}], "&"}], ")"}], "/@",
+        "q"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "3"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.821710957095998*^9, 3.821710964413198*^9}, 
+   3.8217110668095837`*^9, {3.821711271026846*^9, 3.8217112852595577`*^9}, {
+   3.8217113941586514`*^9, 3.82171152477921*^9}, {3.82171163957404*^9, 
+   3.821711647996407*^9}, {3.821711782962791*^9, 3.8217117882982264`*^9}, {
+   3.821711824972258*^9, 3.8217119040699987`*^9}, {3.821712019263906*^9, 
+   3.821712025182267*^9}, {3.821712074371298*^9, 3.821712084340897*^9}, 
+   3.821712146893423*^9, {3.821712218290761*^9, 3.8217122313570642`*^9}, {
+   3.82171238969766*^9, 3.821712410753209*^9}, {3.8217125001861773`*^9, 
+   3.82171250153833*^9}, {3.821712551726791*^9, 3.8217126173658543`*^9}, {
+   3.821712680253744*^9, 3.82171269208881*^9}, {3.82171285271802*^9, 
+   3.821712862424662*^9}, {3.821713048609272*^9, 3.821713054233686*^9}, {
+   3.821713105960767*^9, 3.82171313355439*^9}, {3.8217140958343697`*^9, 
+   3.821714099354093*^9}, {3.821714631640806*^9, 3.821714639223638*^9}, {
+   3.821714690896028*^9, 3.821714696520439*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"f786f632-2b8e-4600-bd77-9744d5be6931"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dubrovnik Polynomial", "Subsection",
+ CellChangeTimes->{{3.821714176721517*^9, 3.8217141936082983`*^9}, {
+  3.82171602166696*^9, 
+  3.821716022474619*^9}},ExpressionUUID->"5c4164bd-045d-410b-94ab-\
+86b6e2fe9863"],
+
+Cell["\<\
+We want to convert from the Lu-Zhong form of the Dubrovnik polynomial to the \
+standard one. To do this, we need to rewrite the equation in the variables \
+$a, z$ where $z = s - s^{-1}$.\
+\>", "Text",
+ CellChangeTimes->{{3.8217141963485727`*^9, 3.821714209992888*^9}, {
+  3.8217143422926607`*^9, 3.82171434737297*^9}, {3.8217143808359613`*^9, 
+  3.821714423501198*^9}},ExpressionUUID->"f819baa9-5fff-48f0-a5b6-\
+c0ae8080692f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Dubrovnik", "[", "q_", "]"}], " ", ":=", "\[IndentingNewLine]", 
+  "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"LuZhong", "[", "q", "]"}], " ", "/.", " ", 
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{"z", " ", "\[Equal]", " ", 
+        RowBox[{"s", "-", "si"}]}], ",", "s"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], " ", "//", " ", 
+   "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.821714434375908*^9, 3.821714603244616*^9}, {
+   3.821717251158786*^9, 3.8217172520573473`*^9}, 3.821717317723257*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"ed840445-b075-4b0d-9f42-01206fdb12cb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["L-polynomial", "Subsection",
+ CellChangeTimes->{{3.821714882491683*^9, 3.82171488782759*^9}, {
+  3.821716019275168*^9, 
+  3.821716019703106*^9}},ExpressionUUID->"150bd80b-7e6a-4922-8569-\
+358e1cfe1a0e"],
+
+Cell["\<\
+Now we need to compute the L-polynomial from the Dubrovnik polynomial. First, \
+we\[CloseCurlyQuote]ll need the writhe. After orienting the top strand of a \
+pretzel knot to run from left to right, the writhe may be computed simply by \
+following the strand orientations at the crossings. Honestly, I\
+\[CloseCurlyQuote]m not sure how to do it in Mathematica (I wrote a Python \
+implementation but it\[CloseCurlyQuote]s not nice, and it definitely won\
+\[CloseCurlyQuote]t work with symbolic expressions). So here I\
+\[CloseCurlyQuote]ve hardcoded the writhe for the family I\[CloseCurlyQuote]m \
+interested in, and it is trivial to show that this formula holds.\
+\>", "Text",
+ CellChangeTimes->{{3.821714892981268*^9, 3.821714910550785*^9}, {
+  3.821714978974963*^9, 3.821714986258836*^9}, {3.821715123532342*^9, 
+  3.821715224429824*^9}, {3.821715266854467*^9, 
+  3.821715375748725*^9}},ExpressionUUID->"fdc22ba4-1eff-4152-b6a5-\
+fecbea921382"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Writhe", "[", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", " ", 
+     RowBox[{"-", "3"}], ",", " ", "n_"}], "}"}], "]"}], " ", ":=", " ", 
+  RowBox[{"-", "n"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LPoly", "[", "q_", "]"}], " ", ":=", "\[IndentingNewLine]", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"I", "^", 
+     RowBox[{"Writhe", "[", "q", "]"}]}], "*", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Dubrovnik", "[", "q", "]"}], " ", "/.", " ", 
+       RowBox[{"a", "\[Rule]", 
+        RowBox[{
+         RowBox[{"-", "a"}], " ", "I"}]}]}], " ", "/.", " ", 
+      RowBox[{"z", "\[Rule]", 
+       RowBox[{"z", " ", "I"}]}]}], ")"}]}], " ", "//", " ", 
+   "Simplify"}]}]}], "Input",
+ CellChangeTimes->{{3.821715078134409*^9, 3.82171510072718*^9}, {
+   3.8217153861684933`*^9, 3.8217153960574217`*^9}, {3.8217155293281593`*^9, 
+   3.821715605763118*^9}, {3.821715642187346*^9, 3.821715668818768*^9}, {
+   3.821715796060046*^9, 3.82171580387048*^9}, 3.822135854149454*^9, 
+   3.8221359954718924`*^9},
+ CellLabel->"In[14]:=",ExpressionUUID->"4bbe44fb-d2d4-4f9d-9b2b-0fe48b209f13"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Kauffman Polynomial", "Subsection",
+ CellChangeTimes->{{3.821715840425915*^9, 3.821715861649909*^9}, {
+  3.8217160154670277`*^9, 
+  3.821716016124549*^9}},ExpressionUUID->"3bef7796-8270-47c0-b249-\
+f4a14c132983"],
+
+Cell["Now we can finally compute the Kauffman polynomial. ", "Text",
+ CellChangeTimes->{{3.821715868843248*^9, 
+  3.821715893557953*^9}},ExpressionUUID->"f8ec4bb9-60e0-4dee-8946-\
+11725828e879"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Kauffman", "[", "q_", "]"}], " ", ":=", "\[IndentingNewLine]", 
+  "\t", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{"LPoly", "[", "q", "]"}], "*", 
+    RowBox[{"ai", "^", 
+     RowBox[{"Writhe", "[", "q", "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8217158958477707`*^9, 3.821715947112439*^9}, {
+  3.822135201458056*^9, 3.822135251552904*^9}},
+ CellLabel->
+  "In[243]:=",ExpressionUUID->"8c57e303-cfd3-4b30-a2ee-9534dc841a49"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Thurston-Bennequin number", "Section",
+ CellChangeTimes->{{3.821716001082891*^9, 3.821716012361292*^9}, {
+  3.821716085129386*^9, 
+  3.821716089411105*^9}},ExpressionUUID->"7f2bc5ca-717c-45b4-a8dd-\
+8350e703808a"],
+
+Cell["\<\
+We can use the Kauffman polynomial to get an upper bound on the maximal \
+Thurston-Bennequin number. In the form of the polynomial that we have, this \
+bound is the minimal degree of $a$, minus one.\
+\>", "Text",
+ CellChangeTimes->{{3.8217161249362288`*^9, 
+  3.821716183405504*^9}},ExpressionUUID->"2b250bae-a6d6-41dc-948f-\
+5dd7055721e7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TBBound", "[", "q_", "]"}], " ", ":=", "\[IndentingNewLine]", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Exponent", "[", 
+     RowBox[{
+      RowBox[{"Kauffman", "[", "q", "]"}], ",", " ", "a", ",", " ", "Min"}], 
+     "]"}], " ", "-", " ", "1"}], "//", "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.821716196132002*^9, 3.8217162220550127`*^9}, {
+  3.821716296500263*^9, 3.821716378282872*^9}, {3.8217172173232737`*^9, 
+  3.821717222894904*^9}, {3.8221313990402184`*^9, 3.822131403986001*^9}},
+ CellLabel->
+  "In[133]:=",ExpressionUUID->"d4019e18-2c18-4809-a1d1-5c32dbb3922c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Assuming", "[", 
+  RowBox[{
+   RowBox[{"n", " ", "\[Element]", " ", "Integers"}], ",", " ", 
+   RowBox[{"TBBound", "[", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", " ", 
+      RowBox[{"-", "3"}], ",", " ", "n"}], "}"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.821716365975769*^9, 3.821716370244639*^9}, {
+   3.8217164021358967`*^9, 3.821716415000955*^9}, {3.821716546663883*^9, 
+   3.821716547284539*^9}, 3.8217166080022297`*^9, {3.821716667670546*^9, 
+   3.821716708784975*^9}, {3.821716746194498*^9, 3.82171674692096*^9}, {
+   3.821716798545197*^9, 3.821716840126032*^9}, {3.821717003448666*^9, 
+   3.821717004036187*^9}, {3.8217170598348618`*^9, 3.821717081099185*^9}, {
+   3.821717185189485*^9, 3.8217171852602043`*^9}, {3.821717264470367*^9, 
+   3.821717265341837*^9}, {3.82171730490733*^9, 3.821717309830894*^9}, {
+   3.821718009064068*^9, 3.821718010804386*^9}, {3.822128735593082*^9, 
+   3.822128743765666*^9}, {3.822129455996591*^9, 3.822129509223043*^9}, {
+   3.8221301313662243`*^9, 3.822130137076873*^9}, {3.822132203233724*^9, 
+   3.8221322083011703`*^9}},
+ CellLabel->
+  "In[162]:=",ExpressionUUID->"50e3a329-cd53-470a-b723-11866503f7f3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "1"}], "+", 
+  RowBox[{"Min", "[", 
+   RowBox[{"0", ",", 
+    RowBox[{
+     RowBox[{"-", "3"}], "+", "n"}]}], "]"}]}]], "Output",
+ CellChangeTimes->{{3.821716370562958*^9, 3.821716415597639*^9}, 
+   3.821716716395916*^9, 3.821716747343721*^9, 3.821716840592008*^9, 
+   3.821717084976027*^9, 3.8217171920413322`*^9, 3.8217172286824827`*^9, 
+   3.821717297828022*^9, 3.8217173521581593`*^9, 3.8221288071740007`*^9, 
+   3.8221293840266*^9, 3.822129486486375*^9, 3.8221295524354963`*^9, {
+   3.822130142992301*^9, 3.822130143128694*^9}, 3.82213220907172*^9},
+ CellLabel->
+  "Out[162]=",ExpressionUUID->"d5a12f9a-72bb-4bf0-b1ef-60e6b35a6122"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Is this sufficient? The TB certainly can\[CloseCurlyQuote]t be any ",
+ StyleBox["lower",
+  FontSlant->"Italic"],
+ " than the above bound. But b",
+ "ecause Mathematica was unable to simplify the square roots and complex \
+numbers in the Kauffman polynomial,  we will take a look at the coefficient \
+of ",
+ StyleBox["a^{n-3}",
+  FontSlant->"Italic"],
+ " and make sure that it can\[CloseCurlyQuote]t be zero for some values of ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.82213222041367*^9, 3.822132453960945*^9}, {
+  3.822133732455587*^9, 
+  3.822133738861034*^9}},ExpressionUUID->"62ddb388-645e-444f-835c-\
+a92e1fa19113"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p", " ", "=", " ", 
+   RowBox[{"Assuming", "[", 
+    RowBox[{
+     RowBox[{"n", " ", "\[Element]", " ", "Integers"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"3", ",", " ", 
+            RowBox[{"-", "3"}], ",", " ", "n"}], "}"}], "//", "Kauffman"}], "//",
+          "Expand"}], "//", "PowerExpand"}], "//", "Apart"}], "//", 
+      "Expand"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"coeff", " ", "=", " ", 
+  RowBox[{"Assuming", "[", 
+   RowBox[{
+    RowBox[{"n", " ", "\[Element]", " ", "Integers"}], ",", " ", 
+    RowBox[{
+     RowBox[{"Coefficient", "[", 
+      RowBox[{"p", ",", " ", "a", ",", 
+       RowBox[{"n", "-", "3"}]}], "]"}], "//", "FullSimplify"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"coeff", "\[Equal]", "0"}], ",", "n"}], "]"}], "//", 
+  "Simplify"}]}], "Input",
+ CellChangeTimes->{{3.8221324573735037`*^9, 3.822132629709597*^9}, {
+   3.8221326603695107`*^9, 3.822132692137034*^9}, {3.822132733489715*^9, 
+   3.822132759106113*^9}, {3.822132800553226*^9, 3.822132801719592*^9}, {
+   3.822132834321928*^9, 3.8221329562806387`*^9}, {3.822133068099421*^9, 
+   3.822133208034013*^9}, {3.822133251428529*^9, 3.822133256740493*^9}, {
+   3.8221332920080957`*^9, 3.822133294024828*^9}, 3.822133332603487*^9, {
+   3.82213337098304*^9, 3.822133507043589*^9}},
+ CellLabel->
+  "In[234]:=",ExpressionUUID->"4aaf9418-eef5-4b33-b8df-3a23057eec00"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "4"}], "+", 
+      SuperscriptBox["z", "2"]}], ")"}]}]], 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"z", "+", 
+      RowBox[{"\[ImaginaryI]", " ", 
+       SqrtBox[
+        RowBox[{"4", "-", 
+         SuperscriptBox["z", "2"]}]]}]}], ")"}], 
+    RowBox[{"-", "n"}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["z", "2"]}]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["2", "n"], "-", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "2"}], "+", 
+           SuperscriptBox["z", "2"], "+", 
+           RowBox[{"\[ImaginaryI]", " ", "z", " ", 
+            SqrtBox[
+             RowBox[{"4", "-", 
+              SuperscriptBox["z", "2"]}]]}]}], ")"}], "n"]}], ")"}]}], "-", 
+     RowBox[{"4", " ", "\[ImaginaryI]", " ", 
+      SuperscriptBox["z", "2"], " ", 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["z", "2"]}]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["2", "n"], "-", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "2"}], "+", 
+           SuperscriptBox["z", "2"], "+", 
+           RowBox[{"\[ImaginaryI]", " ", "z", " ", 
+            SqrtBox[
+             RowBox[{"4", "-", 
+              SuperscriptBox["z", "2"]}]]}]}], ")"}], "n"]}], ")"}]}], "+", 
+     RowBox[{"\[ImaginaryI]", " ", 
+      SuperscriptBox["z", "4"], " ", 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["z", "2"]}]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["2", "n"], "-", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "2"}], "+", 
+           SuperscriptBox["z", "2"], "+", 
+           RowBox[{"\[ImaginaryI]", " ", "z", " ", 
+            SqrtBox[
+             RowBox[{"4", "-", 
+              SuperscriptBox["z", "2"]}]]}]}], ")"}], "n"]}], ")"}]}], "+", 
+     RowBox[{"8", " ", "z", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["2", "n"], "+", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "2"}], "+", 
+           SuperscriptBox["z", "2"], "+", 
+           RowBox[{"\[ImaginaryI]", " ", "z", " ", 
+            SqrtBox[
+             RowBox[{"4", "-", 
+              SuperscriptBox["z", "2"]}]]}]}], ")"}], "n"]}], ")"}]}], "-", 
+     RowBox[{"6", " ", 
+      SuperscriptBox["z", "3"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["2", "n"], "+", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "2"}], "+", 
+           SuperscriptBox["z", "2"], "+", 
+           RowBox[{"\[ImaginaryI]", " ", "z", " ", 
+            SqrtBox[
+             RowBox[{"4", "-", 
+              SuperscriptBox["z", "2"]}]]}]}], ")"}], "n"]}], ")"}]}], "+", 
+     RowBox[{
+      SuperscriptBox["z", "5"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["2", "n"], "+", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "2"}], "+", 
+           SuperscriptBox["z", "2"], "+", 
+           RowBox[{"\[ImaginaryI]", " ", "z", " ", 
+            SqrtBox[
+             RowBox[{"4", "-", 
+              SuperscriptBox["z", "2"]}]]}]}], ")"}], "n"]}], ")"}]}]}], 
+    ")"}]}]}]], "Output",
+ CellChangeTimes->{
+  3.822133339884716*^9, {3.8221334119452477`*^9, 3.822133508450841*^9}},
+ CellLabel->
+  "Out[235]=",ExpressionUUID->"99476257-cc9e-4fb4-b097-ef0c8c9b594c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"n", "\[Rule]", 
+    TemplateBox[{
+      FractionBox[
+       RowBox[{
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+           TemplateBox[{"1"}, "C"]}], "+", 
+         RowBox[{"Log", "[", 
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{"2", "-", 
+                 RowBox[{"16", " ", 
+                   SuperscriptBox["z", "2"]}], "+", 
+                 RowBox[{"20", " ", 
+                   SuperscriptBox["z", "4"]}], "-", 
+                 RowBox[{"8", " ", 
+                   SuperscriptBox["z", "6"]}], "+", 
+                 SuperscriptBox["z", "8"], "-", 
+                 RowBox[{"4", " ", "\[ImaginaryI]", " ", "z", " ", 
+                   SqrtBox[
+                    RowBox[{"4", "-", 
+                    SuperscriptBox["z", "2"]}]]}], "+", 
+                 RowBox[{"10", " ", "\[ImaginaryI]", " ", 
+                   SuperscriptBox["z", "3"], " ", 
+                   SqrtBox[
+                    RowBox[{"4", "-", 
+                    SuperscriptBox["z", "2"]}]]}], "-", 
+                 RowBox[{"6", " ", "\[ImaginaryI]", " ", 
+                   SuperscriptBox["z", "5"], " ", 
+                   SqrtBox[
+                    RowBox[{"4", "-", 
+                    SuperscriptBox["z", "2"]}]]}], "+", 
+                 RowBox[{"\[ImaginaryI]", " ", 
+                   SuperscriptBox["z", "7"], " ", 
+                   SqrtBox[
+                    RowBox[{"4", "-", 
+                    SuperscriptBox["z", "2"]}]]}]}], ")"}]}], "]"}]}], 
+       RowBox[{"Log", "[", 
+         RowBox[{
+           FractionBox["1", "2"], " ", 
+           RowBox[{"(", 
+             RowBox[{
+               RowBox[{"-", "2"}], "+", 
+               SuperscriptBox["z", "2"], "+", 
+               RowBox[{"\[ImaginaryI]", " ", "z", " ", 
+                 SqrtBox[
+                  RowBox[{"4", "-", 
+                    SuperscriptBox["z", "2"]}]]}]}], ")"}]}], "]"}]], 
+      RowBox[{
+        TemplateBox[{"1"}, "C"], "\[Element]", 
+        TemplateBox[{}, "Integers"]}]},
+     "ConditionalExpression"]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.822133339884716*^9, {3.8221334119452477`*^9, 3.822133508736639*^9}},
+ CellLabel->
+  "Out[236]=",ExpressionUUID->"7e0a1772-4dbc-42f5-96d1-4fe192e114ea"]
+}, Open  ]],
+
+Cell[TextData[{
+ "So the coefficient of ",
+ StyleBox["a^{n-3}",
+  FontSlant->"Italic"],
+ " can never be identically zero regardless of ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ", since it depends on the value of ",
+ StyleBox["z",
+  FontSlant->"Italic"],
+ ". Thus the minimum degree of ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ " in the Kauffman polynomial of the pretzel knot ",
+ StyleBox["P(3, -3, n)",
+  FontSlant->"Italic"],
+ " is ",
+ StyleBox["min(0, n - 3)",
+  FontSlant->"Italic"],
+ " and so the maximal TB of the pretzel knot ",
+ StyleBox["P(3, -3, n)",
+  FontSlant->"Italic"],
+ " is ",
+ StyleBox["min(-1, n - 4)",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.822133563028224*^9, 
+  3.822133840095742*^9}},ExpressionUUID->"eafea256-71d7-463a-8fa6-\
+fd8cf7c59ff9"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1152., 625.5},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>0.75 Inherited,
+FrontEndVersion->"12.2 for Linux x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"9995fae8-a3f3-4554-8bfe-d4034755a079"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 235, 4, 74, "Title",ExpressionUUID->"d0ce636a-765f-4f4f-97af-9ba0d1c001d9"],
+Cell[818, 28, 159, 3, 24, "Author",ExpressionUUID->"ac02ed66-2232-493e-bc2d-bc6dd1c71edb"],
+Cell[980, 33, 523, 10, 45, "Text",ExpressionUUID->"3ef5f994-648e-4033-bfb4-b09e01ada0fa"],
+Cell[CellGroupData[{
+Cell[1528, 47, 344, 5, 41, "Subsection",ExpressionUUID->"5480c8bb-30b0-4dce-b9e2-4e478d990964"],
+Cell[1875, 54, 721, 12, 63, "Text",ExpressionUUID->"7eb76a58-58f6-497e-8e23-f0db2500ad40"],
+Cell[2599, 68, 272, 6, 27, "Text",ExpressionUUID->"b1dc1581-3345-45e4-927e-e7d52da680da"],
+Cell[2874, 76, 3082, 83, 141, "Input",ExpressionUUID->"b28ecfc6-2624-4935-8bae-3bc97bad8d5a"],
+Cell[5959, 161, 217, 5, 27, "Text",ExpressionUUID->"fda4e5be-98d6-476b-b39c-ce5dd7c0ad94"],
+Cell[6179, 168, 1799, 36, 40, "Input",ExpressionUUID->"f786f632-2b8e-4600-bd77-9744d5be6931"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8015, 209, 218, 4, 41, "Subsection",ExpressionUUID->"5c4164bd-045d-410b-94ab-86b6e2fe9863"],
+Cell[8236, 215, 436, 8, 27, "Text",ExpressionUUID->"f819baa9-5fff-48f0-a5b6-c0ae8080692f"],
+Cell[8675, 225, 652, 16, 40, "Input",ExpressionUUID->"ed840445-b075-4b0d-9f42-01206fdb12cb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9364, 246, 208, 4, 41, "Subsection",ExpressionUUID->"150bd80b-7e6a-4922-8569-358e1cfe1a0e"],
+Cell[9575, 252, 956, 15, 63, "Text",ExpressionUUID->"fdc22ba4-1eff-4152-b6a5-fecbea921382"],
+Cell[10534, 269, 1137, 28, 56, "Input",ExpressionUUID->"4bbe44fb-d2d4-4f9d-9b2b-0fe48b209f13"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11708, 302, 218, 4, 41, "Subsection",ExpressionUUID->"3bef7796-8270-47c0-b249-f4a14c132983"],
+Cell[11929, 308, 194, 3, 27, "Text",ExpressionUUID->"f8ec4bb9-60e0-4dee-8946-11725828e879"],
+Cell[12126, 313, 478, 12, 40, "Input",ExpressionUUID->"8c57e303-cfd3-4b30-a2ee-9534dc841a49"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12641, 330, 219, 4, 50, "Section",ExpressionUUID->"7f2bc5ca-717c-45b4-a8dd-8350e703808a"],
+Cell[12863, 336, 350, 7, 27, "Text",ExpressionUUID->"2b250bae-a6d6-41dc-948f-5dd7055721e7"],
+Cell[13216, 345, 613, 13, 40, "Input",ExpressionUUID->"d4019e18-2c18-4809-a1d1-5c32dbb3922c"],
+Cell[CellGroupData[{
+Cell[13854, 362, 1182, 21, 22, "Input",ExpressionUUID->"50e3a329-cd53-470a-b723-11866503f7f3"],
+Cell[15039, 385, 676, 14, 25, "Output",ExpressionUUID->"d5a12f9a-72bb-4bf0-b1ef-60e6b35a6122"]
+}, Open  ]],
+Cell[15730, 402, 675, 18, 45, "Text",ExpressionUUID->"62ddb388-645e-444f-835c-a92e1fa19113"],
+Cell[CellGroupData[{
+Cell[16430, 424, 1550, 38, 56, "Input",ExpressionUUID->"4aaf9418-eef5-4b33-b8df-3a23057eec00"],
+Cell[17983, 464, 3664, 114, 67, "Output",ExpressionUUID->"99476257-cc9e-4fb4-b097-ef0c8c9b594c"],
+Cell[21650, 580, 2349, 58, 64, "Output",ExpressionUUID->"7e0a1772-4dbc-42f5-96d1-4fe192e114ea"]
+}, Open  ]],
+Cell[24014, 641, 791, 29, 45, "Text",ExpressionUUID->"eafea256-71d7-463a-8fa6-fd8cf7c59ff9"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
