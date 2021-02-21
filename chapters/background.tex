@@ -1,10 +1,11 @@
+\chapter{Background}
 \section{Legendrian Knots}
 
 We are interested in defining a certain class of knots called Legendrian Knots. Before we proceed let us give a definition for knots in general, and touch on how we represent them.
 
-\begin{defn}
+\begin{definition}
     A \textbf{knot} is a (smoothly) embedded $S^1$ in $\R^3$. Two knots are said to be \textbf{equivalent} if there exists a (smooth) isotopy of $\R^3$ taking one knot to the other.
-\end{defn}
+\end{definition}
 We require that knots be smooth for two reasons. The first is because non-smooth knots can be wild (pathological).
 But requiring knots to be finite polygonal chains also excludes the possibility of pathological behavior, so the second reason for knots to be smooth is because further on we will define Legendrian knots using differential geometry, so our knots must be differentiable. 
 
@@ -26,8 +27,7 @@ Moreover, regular diagrams contain enough information to reconstruct the origina
 
 In order to define Legendrian knots we begin by defining a certain plane field on $\R^3$; it is called the \emph{standard contact structure}, or $\xi_0$. At each $(x, y, z) \in \R^3$ we define
 \[
-    \xi_0(x, y, z) = \lspan \{\partial_y,
-                                   \partial_x + y\partial_z\}
+    \xi_0(x, y, z) = \lspan \{\partial_y, \partial_x + y\partial_z\}
 \]
 Note that $\xi_0$ is defined as a linear combination of the partial derivatives of the coordinate functions, as these are the basis vectors of the tangent space $\tpm_{(x, y, z)} \R^3$, of which $\xi_0$ is a 2-dimensional subspace.
 
@@ -48,20 +48,20 @@ In general, a 3-manifold equipped with a completely non-integrable plane field i
 
 Although no surface can be everywhere tangent to $\xi_0$, there are many curves which run tangent to $\xi_0$. Such a curve is called \emph{Legendrian}, leading to the following definition.
 
-\begin{defn}
+\begin{definition}
     Let $K: (0, 1) \to \R^3$ be a smooth curve. We say $K$ is \textbf{Legendrian} if $K$ is everywhere tangent to $\xi_0$. That is, at all $t \in (0, 1)$,
     \[
         K'(t) \in \xi_0(K(t))
     \]
-\end{defn}
+\end{definition}
 
 As a knot is a smooth embedding of the circle in $\R^3$, so a Legendrian knot is a Legendrian embedding of the circle in $(\R^3, \xi_0)$. But the equivalence relation under which one defines a knot is as important as the curve itself, and so we will define an analogous relation for Legendrian knots. Two knots $K, K'$ are said to be equivalent if there exists a smooth isotopy taking $K$ to $K'$. Similarly, two Legendrian knots $L$ and $L'$ are said to be equivalent if there exists an isotopy taking $L$ to $L'$ such that every intermediate knot is Legendrian.
 We frequently use the terms \emph{equivalent} and \emph{isotopic} to refer to knots that are either Legendrian equivalent or smooth equivalent. Generally, when referring to Legendrian knots, we mean Legendrian equivalence, but when confusion may arise we will explicitly use the term \emph{smooth equivalent/isotopic}.
 
-\begin{defn}
+\begin{definition}
     Let $K$ and $K'$ be Legendrian knots. We say $K$ and $K'$ are \textbf{Legendrian equivalent} if there exists a smooth function $\phi: [0, 1] \to \R^3$ such that
     $\phi(0) = K$, $\phi(1) = K'$, and for any $t \in [0, 1]$, $\phi(t)$ is a Legendrian knot.
-\end{defn}
+\end{definition}
 
 By definition, all Legendrian knots are smooth knots, and it is clear that there are representatives of smooth knots which aren't Legendrian. Nonetheless, Legendrian knots are plentiful. In fact, any knot can be $C^0$ approximated by a Legendrian knot (a proof of this fact will be given in section 1.3, once we have defined stabilization).
 % TODO: put in this proof 
@@ -99,28 +99,28 @@ Moreover, in a front diagram there is no need to mark the overstrand at a crossi
 Any two knots which are Legendrian equivalent are also smooth equivalent by definition, so let us ask whether the converse is true.
 As you may expect the answer is no. Moreover, since we can approximate any smooth knot by an isotopic Legendrian one, the relation of Legendrian equivalence ``refines'' the equivalence classes of smooth knots into a larger number of Legendrian equivalence classes. What does the structure of this refinement look like? As expected this is a nontrivial question. We will begin to answer it by looking at equivalence of diagrams.
 
-Although one defines two smooth knots to be equal if there is an isotopy between them as curves in $\R^3$, the Redeimeister moves provide an equivalent \emph{diagrammatic} formulation.
-It is three ``moves'' which may be made on a diagram, such that two knots are equal if and only if their diagrams may be related using some series of Redeimeister moves.
-The Redeimeister moves don't preserve Legendrian equivalence, but there's a similar set of three diagrammatic moves which determine Legendrian equivalence of front diagrams  \cite{swiatkowski}.
+Although one defines two smooth knots to be equal if there is an isotopy between them as curves in $\R^3$, the Reidemeister moves provide an equivalent \emph{diagrammatic} formulation.
+It is three ``moves'' which may be made on a diagram, such that two knots are equal if and only if their diagrams may be related using some series of Reidemeister moves.
+The Reidemeister moves don't preserve Legendrian equivalence, but there's a similar set of three diagrammatic moves which determine Legendrian equivalence of front diagrams  \cite{swiatkowski}.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{images/redeimeister.pdf}
-    \caption{The Legendrian Redeimeister moves.}%
+    \caption{The Legendrian Reidemeister moves.}%
     \label{fig:redemeister}
 \end{figure}
 
-These moves correspond to restricted version of the smooth Redeimeister moves.
-Unfortunately, as with the smooth Redeimeister moves, it is difficult in practice to determine equivalence of knots using these rules. Nonetheless, they are useful in the construction of more practical invariants, as invariance under all three Redeimeister moves is equivalent to invariance under Legendrian isotopy.
+These moves correspond to restricted version of the smooth Reidemeister moves.
+Unfortunately, as with the smooth Reidemeister moves, it is difficult in practice to determine equivalence of knots using these rules. Nonetheless, they are useful in the construction of more practical invariants, as invariance under all three Reidemeister moves is equivalent to invariance under Legendrian isotopy.
 
 There are two numerical invariants which can be easily defined in and computed from the front projection, and they are called the \emph{classical invariants}.
-\begin{defn}
+\begin{definition}
     Let $K$ be a Legendrian knot, and $D$ a front diagram for $K$. Let $\cusps_r(D)$ be the number of right cusps in $D$, and $\writhe(D)$ the writhe of $D$, defined below.
     Define the \textbf{Thurston-Bennequin number} as
     \[
         \tb(K) = \writhe(D) - \cusps_r(D)
     \]
-\end{defn}
+\end{definition}
 To define the writhe $\writhe(D)$ of a diagram $D$, we assign a sign to each crossing in $D$. If as you travel along the overstrand, the understrand goes from right to left, then the crossing is positive; and if the understrand runs from left to right then the crossing is negative. The writhe is the sum of the signs of the crossings.
 
 \begin{figure}[ht]
@@ -133,7 +133,7 @@ To define the writhe $\writhe(D)$ of a diagram $D$, we assign a sign to each cro
 Writhe is \emph{not} an invariant of Legendrian knots. Because the $r_1$ move adds a crossing without changing the orientation of other crossings, it changes the writhe. Nonetheless, the $\tb$ is easily shown to be an invariant.
 
 \begin{proof}
-    Let $D$ be a front diagram for a Legendrian knot $K$. It suffices to show that $\tb(D)$ is unchanged under the Legendrian Redeimeister moves.
+    Let $D$ be a front diagram for a Legendrian knot $K$. It suffices to show that $\tb(D)$ is unchanged under the Legendrian Reidemeister moves.
 
     \begin{enumerate}
         \item $r_1$ adds one right cusp and one crossing. Regardless of the orientation of of the segment before the move, the new crossing is easily seen to have sign $+1$, and therefore
@@ -146,13 +146,13 @@ Writhe is \emph{not} an invariant of Legendrian knots. Because the $r_1$ move ad
     
 \end{proof}
 
-\begin{defn}
+\begin{definition}
     Let $K$ be a Legendrian knot and $D$ a front diagram for $K$. Let $\cusps_u(D)$ be the number of \emph{upward-pointing cusps} and $\cusps_d(D)$ be the number of \emph{downward-pointing cusps}. Define the \textbf{rotation number} of $K$ as 
     \[
         \rot(K) = \frac{1}{2} (\cusps_d(D) - \cusps_u(D))
     \]
     Although $\rot(K)$ is only well-defined for \emph{oriented} $K$, it is defined up to multiplication by $\pm 1$ for unoriented knots.
-\end{defn}
+\end{definition}
 \begin{proof}
     As before, we show that $\rot(K)$ is an invariant, so let $D$ be a front diagram for $K$. Neither $r_2$ nor $r_3$ change the orientation or the number of cusps. On the other hand, $r_1$ creates a pair of cusps, one pointing upward and one pointing downward.
 \end{proof}
@@ -187,23 +187,23 @@ Many useful knot invariants take the form of Laurentian polynomials (ie, having 
 In particular, we are interested in the Kauffman polynomial, as it gives an upper bound on the maximal TB of a smooth knot type. We define the Kauffman polynomial in terms of the L-polynomial, which is an invariant only under regular isotopy.
 There are many varying definitions of the Kauffman polynomial in the literature. We use here a variant known as the Dubrovnik polynomial (it was discovered in the city of Dubrovnik in Yugoslavia \cite{kauffman}), and we refer to its normalized version as the Kauffman polynomial. Our formulation matches that used by \cite{ferrand} and is similar to that used by \cite{lu-zhong}.
 
-Let $T$ be a link diagram, and define $D$ recursively via the following skein relations, where the Dubrovnik polynomial of the unknot is normalized to be $\frac{a - a^{-1}}{z} + 1$:
+Let $T$ be a knot diagram or an oriented link diagram, and define $D$ recursively via the following skein relations, where $\delta = \frac{a - a^{-1}}{z} + 1$.
+\begin{align}
+    D\left(\Lmin\right) - D\left(\Lplus\right) &= z \left( D\left(\Lzero\right) - D\left(\Linf\right) \right) \\
+    D\left(\Lr\right) &= a D \Big(\Ln\Big)\\
+    D\left(\Lu\right) &= \delta
+\end{align}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.5\linewidth]{images/ng-skein.png}
-    \caption{The skein relations for the L polynomial, from NG. TODO: make your own diagram, and explain this properly.}%
-    \label{fig:skein}
-\end{figure}
+The first two equations are local, indicating a relation between the Dubrovnik polynomials of diagrams which are identical except for the substitution of the indicated figures. The third equation normalizes the recurrence relation by determining the Dubrovnik polynomial of an uncrossed diagram for the unknot.
 
-Yet such a polynomial is certainly not a topological invariant: the $r_1$ move corresponds to multiplication by $a^{\pm 1}$. Thus we normalize the D-polynomial by the writhe to get the Kauffman polynomial $Y(K)$, since the same $r_1$ move which corresponds to a multiplication by $a$ in the Dubrovnik polynomial increases the writhe by 1.
-\begin{defn}
-    Let $K$ be a smooth knot and $T$ a diagram for $K$. Define the \textbf{Kauffman Polynomial} of $K$ by
+Yet such a polynomial is certainly not a topological invariant: the $r_1$ move corresponds to multiplication by $a^{\pm 1}$. Thus we normalize the D-polynomial by the writhe to get the Kauffman polynomial $Y(K)$, since the same $r_1$ move which corresponds to a multiplication by $a$ in the Dubrovnik polynomial increases the writhe by 1. This is why we require that $K$ by oriented if it is a link and not a knot: writhe is well-defined for unoriented knots but not for unoriented links in general.
+\begin{definition}
+    Let $K$ be a knot or an oriented link and $T$ a diagram for $K$. Define the \textbf{Kauffman Polynomial} of $K$ by
     \[
         Y(K) = a^{-w(T)} D(T)
     \]
     The polynomial, which is a Laurentian polynomial in $a, x$, is an invariant under smooth isotopy \cite{kauffman}.
-\end{defn}
+\end{definition}
 
 The degree of the framing variable $a$ in the Kauffman polynomial gives rise to an upper bound on the TB, which was first proved by Rudolph \cite{rudolph}. The version we use here is due to Tabachnikov \cite{tabachnikov}. More information on this bound and its history can be found in \cite{ferrand}.
 
@@ -211,9 +211,9 @@ The degree of the framing variable $a$ in the Kauffman polynomial gives rise to 
     If $K$ is a Legendrian link, then $\overline{tb}(K) \leq \mu_a(Y(K))$, where $\mu_a(P)$ denotes the minimum degree of $a$ in the polynomial $P(a, x)$.
 \end{theorem}
 
-This bound is very useful: there is no method in general for computing the maximal TB of a knot, but it is a fairly straightforward matter to compute its Kauffman polynomial. The bound fails to be sharp in some known cases (eg, \cite{ferrand}) but there are also classes of knots for which it is known to be sharp. These include positive knots, most torus knots, 2-bridge links, and most 3-twist pretzel links. That the Kauffman bound is sharp for many 3-twist pretzel links is a theorem of \cite{ng}:
+This bound is very useful: there is no method in general for computing the maximal TB of a knot, but it is a fairly straightforward matter to compute its Kauffman polynomial. The bound fails to be sharp in some known cases (eg, \cite{ferrand}) but there are also classes of knots for which it is known to be sharp. These include positive knots, most torus knots, 2-bridge links, and most 3-twist pretzel links. That the Kauffman bound is sharp for many 3-twist pretzel links is a theorem of Ng:
 
-\begin{theorem}
+\begin{theorem}[\cite{ng}]
     Suppose $p_1, p_2, p_3 > 0$. Then the Kauffman bound is sharp for the pretzel links $P(p_1, p_2, p_3)$, $P(-p_1, p_2, p_3)$, and $P(-p_1, -p_2, -p_3)$, and for $P(-p_1, -p_2, p_3)$ when $p_1 \geq p_2 \neq p_3 + 1$.
 \end{theorem}
 
@@ -225,31 +225,31 @@ We will make use of this theorem in our main result.
 
 Cobordisms are objects originating in smooth knot theory which define a fundamental relation between types of knots. We define them here in the context of smooth knots, and then we will be able to define a type of cobordism called a Lagrangian cobordism by requiring that it be everywhere tangent to a certain differential form.
 
-\begin{defn}
+\begin{definition}
     Let $K$ and $K'$ be smooth knots. Define a \textbf{cobordism} as a smoothly embedded 2-manifold $A$ in $\R^3 \times I$ such that the bottom edge of $A$ is $K$ and the top edge of $A$ is $K'$. That is,
     \begin{align*}
         A \cap \left(\R^3 \times \{0\}\right) &= K \times \{0\}\\
         A \cap \left(\R^3 \times \{1\}\right) &= K' \times \{1\}
     \end{align*}
-\end{defn}
+\end{definition}
 
-We extend this definition by defining a \emph{symplectic manifold} in much the same way we defined a contact manifold: as a manifold equipped with an appropriate differential form.
+We extend this definition by defining a \emph{symplectic manifold} in much the same way we defined a contact manifold: as a manifold equipped with an appropriate differential form. Recall that a 2-form $\omega$ on a manifold $X$ is \emph{closed} if $d \omega = 0$ (ie, its exterior derivative vanishes) and \emph{nondegenerate} if $\omega(\vec v, \vec w) = 0$ for all $\vec w \in \tpm_p X$ implies $\vec v = 0$.
 
-\begin{defn}
+\begin{definition}
     Let $X$ be a 4-dimensional smooth manifold and $\omega$ a two-form on $X$ that is closed and nondegenerate. Then the pair $(X, \omega)$ is said to be a \textbf{symplectic 4-manifold}.
-\end{defn}
+\end{definition}
 
 Analogous to Legendrian curves in contact manifolds are Lagrangian surfaces in symplectic manifolds.
-\begin{defn}
+\begin{definition}
     Let $(X, \omega)$ be a symplectic 4-manifold and $L$ a smoothly embedded 2-manifold in $X$. We say $L$ is \textbf{Lagrangian} if for all $p \in L$, $\omega$ vanishes on $\tpm_p L$.
-\end{defn}
+\end{definition}
 
 % This section could do with a rework -- either go more into depth or less into depth.
 
 % give a citation for this
 Given a contact manifold $(Y, \ker \alpha)$ there is a canonically associated symplectic manifold $(Y \times \R, d(e^t \alpha))$, where $t$ is the coordinate on the attached copy of $\R$. This allows us to put Legendrian knots into symplectic manifolds as slices of Lagrangian submanifolds. Thus a Lagrangian cobordism is a cobordism that is also Lagrangian, with a few extra conditions required.
 
-\begin{defn}
+\begin{definition}
     Let $K$, and $K'$ be Legendrian links, and $L$ a Lagrangian manifold in $(\R^3 \times \R, d(e^t \alpha))$. We say $L$ is a \textbf{Lagrangian cobordism} between $K$ and $K'$ if for some $T > 0$,
     \begin{align*}
         L \cap \left(\R^3 \times (-\infty, -T)\right) &= K \times (-\infty, -T)\\
@@ -259,7 +259,7 @@ Given a contact manifold $(Y, \ker \alpha)$ there is a canonically associated sy
     and there exists a function $f: L \to \R$ such that $df = e^t \alpha |_{\tpm L}$ and $f$ is constant above $t = T$ and below $t = -T$.
 
     We call a Lagrangian cobordism between two \emph{knots} (excluding links with multiple components) with genus zero a \emph{concordance.}
-\end{defn}
+\end{definition}
 
 \begin{figure}[ht]
     \centering
@@ -280,15 +280,15 @@ Thus a Lagrangian concordance can only exist between two knots with equal rotati
 
 \subsection{Constructable Cobordisms}
 
-In general, Lagrangian cobordisms are difficult to find. However, there are several conditions in which they are known to exist. Of interest is a certain set of moves which may be easily defined on front diagrams, the Redeimeister moves among them, such that a Langrangian cobordism exists between knots related by them.
+In general, Lagrangian cobordisms are difficult to find. However, there are several conditions in which they are known to exist. Of interest is a certain set of moves which may be easily defined on front diagrams, the Reidemeister moves among them, such that a Langrangian cobordism exists between knots related by them.
 
 \begin{theorem}[\cite{bourgeois15}]
-    Suppose $K$ and $K'$ are Legendrian knots. If the front diagram of $K'$ can be obtained from the front diagram of $K$ by a finite sequence of handle moves (figure \ref{fig:handles}) and Redeimeister moves (figure \ref{fig:redemeister}), then there exists a Lagrangian cobordism from $K$ to $K'$. 
+    Suppose $K$ and $K'$ are Legendrian knots. If the front diagram of $K'$ can be obtained from the front diagram of $K$ by a finite sequence of handle moves (figure \ref{fig:handles}) and Reidemeister moves (figure \ref{fig:redemeister}), then there exists a Lagrangian cobordism from $K$ to $K'$. 
 \end{theorem}
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.4\textwidth]{images/handles.pdf}
-    \caption{The handle moves. Note that these moves are one-directional, unlike the Redeimeister moves. The addition of a one-handle is sometimes referred to as a \emph{pinch move}. The addition of a zero-handle corresponds to adding an unlinked unknot with maximal TB to the diagram.}
+    \caption{The handle moves. Note that these moves are one-directional, unlike the Reidemeister moves. The addition of a one-handle is sometimes referred to as a \emph{pinch move}. The addition of a zero-handle corresponds to adding an unlinked unknot with maximal TB to the diagram.}
     \label{fig:handles}
 \end{figure}
 
@@ -312,10 +312,10 @@ Specifically, we want to know under what conditions there exists a constructible
 
 A good candidate for this search is the class of knots called ribbon knots, which we define here.
 
-\begin{defn}
+\begin{definition}
     A knot $K$ is said to be \textbf{ribbon} if $K$ bounds a smoothly embedded disk $d: D \to \R^3$ with only ribbon singularities.
     That is, every region of self-intersection of $d$ is an arc $A \in \R^3$ such that the preimage of $A$, $d^{-1} (A)$, consists of two arks in $D$ of which one is within the interior of $D$ and the other has its endpoints on the boundary of $D$.
-\end{defn}
+\end{definition}
 
 This definition is more clear alongside a ribbon diagram.
 
@@ -327,16 +327,4 @@ This definition is more clear alongside a ribbon diagram.
 \end{figure}
 
 In the smooth world, there are fundamental connections between ribbon knots and cobordisms \cite{fox-milnor}. TODO: Explain this
-
-Similarly, for Legendrian knots it is clear that ribbon knots can be constructed from a sufficiently stabilized unknot using the Redeimeister moves, one 0-handle, and one 1-handle. 
-Starting from the unknot, we add a second unknot with a zero-handle, and then use Legendrian isotopy to "pass" the tip of the first unknot through the two loops as desired, before finally using a 1-handle to join the ribbon tip to the second unknot, thus closing the knot. 
-TODO: give a better "proof".
-
-The cobordism created by these moves is necessarily a concordance: The surfaces corresponding to each unknot have genus zero before the addition of the 1-handle, which connects them in only one place.
-TODO: is this explanation right?
-
-Thus to construct such a cobordism to a ribbon knot $K$, we have to start with an unknot $U$ with $\tb U = \tb K$. Given the topological knot type of $K$, the unknot and $K$ must certainly have $\tb \leq \overline{\tb} K$.
-It is an open question when this can be achieved with equality: that is, when a cobordism can be constructed from a stabilized unknot to a maximal-TB Legendrian ribbon knot. 
-
-The main result of this project is the demonstration of a family of ribbon knots for which such a cobordism may be constructed with maximal Thurston-Bennequin number.
 

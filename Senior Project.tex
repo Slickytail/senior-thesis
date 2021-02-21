@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[11pt,twoside,reqno]{book}
 
 % Language and font stuff
 \usepackage[utf8]{inputenc}
@@ -6,27 +6,13 @@
 \usepackage{csquotes}
 \usepackage[T1]{fontenc}
 \usepackage[final]{microtype}
-
+% Formatting
 \usepackage[bookmarks]{hyperref}
-
-% Formatting options
-\usepackage[margin=1in]{geometry}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\usepackage[toc]{appendix}
 
 % Math commands
 \usepackage{amsmath,amssymb,amsthm}
 
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{prop}{Proposition}[section]
-\newtheorem{lemma}[prop]{Lemma}
-
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-
-\theoremstyle{definition}
-\newtheorem{defn}{Definition}[section]
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
 \DeclareMathOperator{\lspan}{span}
@@ -49,21 +35,96 @@
 \usepackage{chngcntr}
 \counterwithin{figure}{subsection}
 
+\usepackage{tikz}
+% Tikz Skein Relations
+\def\Lmin{\tikz[baseline=.6em, scale=2]{
+    \draw (0, 0) -- (1em, 1em);
+    \draw (1em, 0) -- (.6em, .4em);
+    \draw (0, 1em) -- (.4em, .6em);}
+}
+
+\def\Lplus{\tikz[baseline=.6em, scale=2]{
+    \draw (1em, 0) -- (0, 1em);
+    \draw (0, 0) -- (.4em, .4em);
+    \draw (.6em, .6em) -- (1em, 1em);}
+}
+
+\def\Lzero{\tikz[baseline=.6em, scale=2]{
+    \draw (0, 0) .. controls (0.5em, 0.5em) .. (0, 1em);
+    \draw (1em, 1em) .. controls (0.5em, 0.5em) .. (1em, 0);}
+}
+
+\def\Linf{\tikz[baseline=.6em, scale=2]{
+    \draw (0, 1em) .. controls (0.5em, 0.5em) .. (1em, 1em);
+    \draw (0, 0) .. controls (0.5em, 0.5em) .. (1em, 0);}
+}
+
+\def\Lr{\tikz[baseline=.32em, scale=2]{
+        \draw (1.15em, 0)
+        parabola (0.4em, 0.3em)
+        arc (225:-45:.3em)
+        -- (0.7em, 0.2em);
+        \draw (.1em, 0) parabola (.55em, .1em);}
+}
+\def\Ln{\tikz[baseline=.6em, scale=2]{
+    \draw (0, 0.5em) .. controls (0.5em, 0.6em) .. (1em, 0.5em);}
+}
+\def\Lu{\tikz[baseline=.6em, scale=2]{
+    \draw (0.5em, 0.5em) circle (0.5em);}
+}
+
+% Mathematica listings setup
+\usepackage{xcolor}
+\definecolor{tenderblue}{HTML}{4477AD}
+\definecolor{tenderyellow}{HTML}{99973D}
+
+\usepackage{listings}
+\lstdefinestyle{better}{
+    identifierstyle=\color{tenderblue},
+    keywordstyle=\color{tenderyellow},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    keepspaces=true,                 
+    numbersep=5pt                  
+}
+% Bring on the Behemoth
+\usepackage{bardtex}
+\styleoption{seniorproject}
 
 \begin{document}
 
-\include{chapters/titlepage}
-\pagenumbering{roman}
-\newpage
-\include{chapters/abstract}
+\titlepg{Lagrangian Cobordisms of Legendrian Pretzel knots with maximal Thurston-Bennequin number}{Raphael Walker}{May}{2021}
+
+\abstr
+
+
+In the study of Legendrian knots, which are constrained by a differential geometric condition, an area of active interest is conditions for the existence of Lagrangian Cobordisms, which are Lagrangian submanifolds stretching between two embedded Legendrian knots.
+Some such cobordisms can be constructed by a sequence of basic moves; they are called constructible.
+For any topological ribbon knot $T$, one can construct such a cobordism from some Legendran unknot $U$ to a Legendrian representative $K$ of $T$.
+We demonstrate a family of ribbon knots for which there exist constructible cobordisms from a stabilized unknot $U$ to a maximal-TB Legendrian representative of the ribbon knot.
+
+\dedic
+
+Dedicated to
+
+\acknowl
+
+My advisor, Caitlin Leverson...
 
 \tableofcontents
 
-\pagenumbering{arabic}
+\startmain
 
-\include{chapters/contents}
+\include{chapters/introduction}
 
-\appendix
+\include{chapters/background}
 
-\printbibliography
+\include{chapters/pretzel-family}
+
+\begin{appendices}
+    \include{chapters/mathematica}
+\end{appendices}
+
+\printbibliography[heading=bibintoc]
 \end{document}
