@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="20in"
+   height="9in"
+   version="1.1"
+   viewBox="0 0 508.88889 229"
+   id="svg36"
+   sodipodi:docname="pretzel -2 construction.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+  <defs
+     id="defs40">
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path980" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1536"
+     inkscape:window-height="864"
+     id="namedview38"
+     showgrid="true"
+     inkscape:zoom="0.3513793"
+     inkscape:cx="1181.2502"
+     inkscape:cy="471.6361"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g34">
+    <inkscape:grid
+       type="xygrid"
+       id="grid42"
+       spacingx="6.3611111"
+       units="in"
+       spacingy="6.3611111"
+       empspacing="4" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-linecap="square"
+     stroke-miterlimit="5"
+     id="g34">
+    <path
+       d="M 159.02778,69.972222 V 50.888889 H 89.055555 V 152.66667 L 25,152.5 v -127 h 153 l 0.11111,50.833333 h -38.16667 v 6.361111"
+       id="path4"
+       sodipodi:nodetypes="cccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 159.02778,82.694446 v 6.361111 h -38.16667 v 6.361111"
+       id="path148" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 139.94445,95.416668 v 6.361112 h -38.16667 v 50.88889 h 50.88889 v -25.44445 h -31.80556 v -19.08333"
+       id="path150" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.00174978;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:5;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 203.55556,101.77778 h 76.33333"
+       id="path975" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-linecap="square"
+     stroke-miterlimit="5"
+     id="g34-3"
+     transform="translate(279.55556,0.9222224)">
+    <g
+       id="g16-6">
+      <path
+         d="M 178,72.1 V 25.5 H 25 v 127 h 76.3 l 0.22,-20.7"
+         id="path4-7" />
+      <path
+         d="M 102,110 V 50.6 h 50.9 v 21.2"
+         id="path6-5" />
+      <path
+         d="m 50.9,148 v -21.2 h 63.6 v -8.48"
+         id="path8-3" />
+      <path
+         d="m 50.9,157 v 46.6 h 153 v -127 h -76.3 v 21.2"
+         id="path10-5" />
+      <path
+         d="m 76.3,148 -2.8e-5,-17"
+         id="path12-6" />
+      <path
+         d="m 127,119 v 59.4 H 76.1 v -21.2"
+         id="path14-2" />
+    </g>
+    <g
+       id="g32-9">
+      <path
+         d="m 76.3,123 0.0025,-8.54 c 17,0.0645 33.9,0.0605 50.9,0.0605 h 25.4 v -8.48"
+         id="path18-1" />
+      <g
+         id="g30-2">
+        <path
+           d="m 115,110 v -8.48 h 63.6 v -21.2"
+           id="path20-7" />
+        <path
+           d="M 127,115"
+           id="path22-0" />
+        <path
+           d="m 153,97.5 v -17"
+           id="path24-9" />
+        <path
+           d="m 102,123 v -4.24"
+           id="path26-3" />
+        <path
+           d="m 127,106 v 4.24"
+           id="path28-6" />
+      </g>
+    </g>
+  </g>
+</svg>

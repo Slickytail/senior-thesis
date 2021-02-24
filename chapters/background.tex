@@ -115,13 +115,13 @@ Unfortunately, as with the smooth Reidemeister moves, it is difficult in practic
 
 There are two numerical invariants which can be easily defined in and computed from the front projection, and they are called the \emph{classical invariants}.
 \begin{definition}
-    Let $K$ be a Legendrian knot, and $D$ a front diagram for $K$. Let $\cusps_r(D)$ be the number of right cusps in $D$, and $\writhe(D)$ the writhe of $D$, defined below.
+    Let $K$ be a Legendrian knot, and $D$ a front diagram for $K$. Let $\cusps_r(D)$ be the number of right cusps in $D$, and $w(D)$ the writhe of $D$, defined below.
     Define the \textbf{Thurston-Bennequin number} as
     \[
-        \tb(K) = \writhe(D) - \cusps_r(D)
+        \tb(K) = w(D) - \cusps_r(D)
     \]
 \end{definition}
-To define the writhe $\writhe(D)$ of a diagram $D$, we assign a sign to each crossing in $D$. If as you travel along the overstrand, the understrand goes from right to left, then the crossing is positive; and if the understrand runs from left to right then the crossing is negative. The writhe is the sum of the signs of the crossings.
+To define the writhe $w(D)$ of a diagram $D$, we assign a sign to each crossing in $D$. If as you travel along the overstrand, the understrand goes from right to left, then the crossing is positive; and if the understrand runs from left to right then the crossing is negative. The writhe is the sum of the signs of the crossings.
 
 \begin{figure}[ht]
     \centering
@@ -132,13 +132,16 @@ To define the writhe $\writhe(D)$ of a diagram $D$, we assign a sign to each cro
 
 Writhe is \emph{not} an invariant of Legendrian knots. Because the $r_1$ move adds a crossing without changing the orientation of other crossings, it changes the writhe. Nonetheless, the $\tb$ is easily shown to be an invariant.
 
+\begin{proposition}
+    The Thurston-Bennequin number is an invariant of Legendrian knots.
+\end{proposition}
 \begin{proof}
     Let $D$ be a front diagram for a Legendrian knot $K$. It suffices to show that $\tb(D)$ is unchanged under the Legendrian Reidemeister moves.
 
     \begin{enumerate}
         \item $r_1$ adds one right cusp and one crossing. Regardless of the orientation of of the segment before the move, the new crossing is easily seen to have sign $+1$, and therefore
             \[
-                \tb(D') = (\writhe(D) + 1) - (\cusps_r(D) + 1) = \tb(D)
+                \tb(D') = (w(D) + 1) - (\cusps_r(D) + 1) = \tb(D)
             \]
         \item $r_2$ adds two crossings, but they have opposite signs, so the writhe remains the same.
         \item $r_3$ moves two crossings, but their signs remain unchanged.
@@ -153,6 +156,9 @@ Writhe is \emph{not} an invariant of Legendrian knots. Because the $r_1$ move ad
     \]
     Although $\rot(K)$ is only well-defined for \emph{oriented} $K$, it is defined up to multiplication by $\pm 1$ for unoriented knots.
 \end{definition}
+\begin{proposition}
+    The rotation number is an invariant of Legendrian knots.
+\end{proposition}
 \begin{proof}
     As before, we show that $\rot(K)$ is an invariant, so let $D$ be a front diagram for $K$. Neither $r_2$ nor $r_3$ change the orientation or the number of cusps. On the other hand, $r_1$ creates a pair of cusps, one pointing upward and one pointing downward.
 \end{proof}
@@ -177,8 +183,10 @@ Figure \ref{fig:unknots} shows four Legendrian unknots. One of them has $\tb = -
 \end{figure}
 
 % Do you need to explicitly mention that stabilization preserves smooth knot type?
-A stabilization decreases the TB by 1, and changes the rotation number by $\pm 1$ depending on the orientation. Thus for any smooth knot type, the TBs of its Legendrian representatives are unbounded below, and the rotation numbers are unbounded both above and below.
-It is known that for any smooth knot type, the TB is bounded above \cite{bennequin}, and therefore the maximal TB is an invariant of smooth knots. For example, the maximal TB for the unknot is $-1$, as seen in Figure \ref{fig:unknots}. In general, write $\overline{tb}(K)$ for the maximal TB of a smooth knot type.
+A stabilization decreases the TB by 1, and changes the rotation number by $\pm 1$ depending on the orientation. Thus for any topological knot, the TBs of its Legendrian representatives are unbounded below, and the rotation numbers are unbounded both above and below.
+
+It is known that for any topological knot, the TB is bounded above \cite{bennequin}, and therefore the maximal TB is a knot invariant, which we denote $\maxtb(K)$.
+For example, the maximal TB for the unknot is $-1$, as seen in Figure \ref{fig:unknots}, and all other representatives are (Legendrian isotopic to) stabilizations of the uncrossed unknot \cite{atlas}. It is possible to determine whether a Legendrian knot is a stabilization using the Chekanov-Eliashberg DGA, but this does not in general determine $\maxtb$: there exists a Legendrian representative of $m(10_{139})$ with $\tb = -17$ and $\rot = 4$ which is not a stabilization of the maximal-tb representative, which has $\tb = -16$ and $\rot = 1$. Thus we have to look elsewhere to determine $\maxtb$.
 
 \subsection{Polynomial Invariants and Skein Relations}
 
@@ -194,7 +202,7 @@ Let $T$ be a knot diagram or an oriented link diagram, and define $D$ recursivel
     D\left(\Lu\right) &= \delta
 \end{align}
 
-The first two equations are local, indicating a relation between the Dubrovnik polynomials of diagrams which are identical except for the substitution of the indicated figures. The third equation normalizes the recurrence relation by determining the Dubrovnik polynomial of an uncrossed diagram for the unknot.
+The first two equations are local, indicating a relation between the Dubrovnik polynomials of diagrams which are identical except for the substitution of the indicated figures. The third equation normalizes the recurrence relation by determining the Dubrovnik polynomial of an uncrossed diagram for the unknot. The choice of $\delta$ for the polynomial of the unknot is natural; it arises from setting $D(\emptyset) = 1$ for the empty link.
 
 Yet such a polynomial is certainly not a topological invariant: the $r_1$ move corresponds to multiplication by $a^{\pm 1}$. Thus we normalize the D-polynomial by the writhe to get the Kauffman polynomial $Y(K)$, since the same $r_1$ move which corresponds to a multiplication by $a$ in the Dubrovnik polynomial increases the writhe by 1. This is why we require that $K$ by oriented if it is a link and not a knot: writhe is well-defined for unoriented knots but not for unoriented links in general.
 \begin{definition}
