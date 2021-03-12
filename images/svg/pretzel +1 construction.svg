@@ -64,7 +64,8 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g20">
+     inkscape:current-layer="svg22"
+     inkscape:document-rotation="0">
     <inkscape:grid
        type="xygrid"
        id="grid28"
@@ -81,32 +82,25 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     fill="none"
-     stroke="#000000"
-     stroke-linecap="square"
-     stroke-miterlimit="5"
-     id="g20">
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.00174978;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:5;stroke-dasharray:none"
-       d="m 25.444444,25.444444 h 76.333336 76.33333 v 76.333336 h -25.44444 v 25.44444 h 25.44444 v 25.44445 H 127.22222 V 76.333332 h 25.44445 V 50.88889 H 101.77778 V 152.66667 H 25.444444 Z"
-       id="path82" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.00174978;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:5;stroke-dasharray:none;marker-end:url(#marker1193)"
-       d="m 203.55556,101.77778 h 76.33333"
-       id="path907" />
-  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+     d="M 165.38889,12.722224 V 89.05556 165.38889 H 89.055554 v -25.44444 h -25.44444 v 25.44444 H 38.166664 V 114.5 H 114.5 v 25.44445 h 25.44444 V 89.05556 H 38.166664 V 12.722224 Z"
+     id="path82" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1193)"
+     d="m 203.55556,101.77778 h 76.33333"
+     id="path907" />
   <g
      fill="none"
      stroke="#000000"
      stroke-linecap="square"
      stroke-miterlimit="5"
      id="g20-3"
-     transform="translate(280.1111)">
+     transform="rotate(90.07116,254.55555,254.38171)">
     <path
        d="M 178,71 V 25 H 26 v 127 h 76 v -20"
        id="path4-6" />

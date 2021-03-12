@@ -12,7 +12,7 @@
    viewBox="0 0 152.4 101.6"
    version="1.1"
    id="svg8"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
    sodipodi:docname="legendrian redeimester.svg"
    inkscape:export-filename="/home/rafie/Documents/Schoolwork/Sproj (Knot Theory)/Winter Writeup/images/redeimeister.png"
    inkscape:export-xdpi="166"
@@ -178,16 +178,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.89987484"
-     inkscape:cx="119.57501"
-     inkscape:cy="194.79921"
+     inkscape:zoom="1.1710348"
+     inkscape:cx="326.60274"
+     inkscape:cy="252.09133"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="true"
      units="in"
-     inkscape:window-width="867"
-     inkscape:window-height="812"
+     inkscape:window-width="1536"
+     inkscape:window-height="864"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -211,7 +211,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -287,7 +287,7 @@
        id="path1771" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.25;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:center;letter-spacing:0px;baseline-shift:baseline;text-anchor:middle;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:1.25;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro Light';text-align:center;letter-spacing:0px;baseline-shift:baseline;text-anchor:middle;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
        x="25.4"
        y="95.25"
        id="text2351"><tspan
@@ -295,9 +295,7 @@
          id="tspan2349"
          x="25.4"
          y="95.25"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:center;baseline-shift:baseline;text-anchor:middle;stroke-width:0.264583">r<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan2353">1</tspan></tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:center;baseline-shift:baseline;text-anchor:middle;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none">RI</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';letter-spacing:0px;stroke-width:0.264583"
@@ -308,9 +306,7 @@
          id="tspan2355"
          x="80.242821"
          y="95.25"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:end;text-anchor:end;stroke-width:0.264583">r<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan2359">2</tspan></tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:end;text-anchor:end;stroke-width:0.264583">RII</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';letter-spacing:0px;stroke-width:0.264583"
@@ -321,8 +317,6 @@
          id="tspan2397"
          x="130.64064"
          y="95.25"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:center;text-anchor:middle;stroke-width:0.264583">r<tspan
-   style="font-size:65%;text-align:center;baseline-shift:sub;text-anchor:middle"
-   id="tspan2401">3</tspan></tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:center;text-anchor:middle;stroke-width:0.264583">RIII</tspan></text>
   </g>
 </svg>

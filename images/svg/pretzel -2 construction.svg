@@ -44,13 +44,14 @@
      inkscape:window-height="864"
      id="namedview38"
      showgrid="true"
-     inkscape:zoom="0.3513793"
-     inkscape:cx="1181.2502"
-     inkscape:cy="471.6361"
+     inkscape:zoom="0.53575624"
+     inkscape:cx="1002.0256"
+     inkscape:cy="272.79762"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g34">
+     inkscape:current-layer="svg36"
+     inkscape:document-rotation="0">
     <inkscape:grid
        type="xygrid"
        id="grid42"
@@ -67,7 +68,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -78,17 +79,17 @@
      stroke-miterlimit="5"
      id="g34">
     <path
-       d="M 159.02778,69.972222 V 50.888889 H 89.055555 V 152.66667 L 25,152.5 v -127 h 153 l 0.11111,50.833333 h -38.16667 v 6.361111"
+       d="M 120.66787,146.55566 H 139.7512 V 76.583439 H 37.97342 l 0.16667,-64.055555 h 127 V 165.52788 l -50.83333,0.11111 v -38.16667 h -6.36111"
        id="path4"
        sodipodi:nodetypes="cccccccccc"
        style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
-       d="m 159.02778,82.694446 v 6.361111 h -38.16667 v 6.361111"
+       d="m 107.94564,146.55566 h -6.36111 v -38.16667 h -6.361108"
        id="path148" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
-       d="m 139.94445,95.416668 v 6.361112 h -38.16667 v 50.88889 h 50.88889 v -25.44445 h -31.80556 v -19.08333"
+       d="M 95.223422,127.47233 H 88.86231 V 89.305664 H 37.97342 V 140.19455 H 63.41787 V 108.38899 H 82.5012"
        id="path150" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1.00174978;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:5;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
@@ -101,7 +102,7 @@
      stroke-linecap="square"
      stroke-miterlimit="5"
      id="g34-3"
-     transform="translate(279.55556,0.9222224)">
+     transform="rotate(90,253.76667,254.78889)">
     <g
        id="g16-6">
       <path

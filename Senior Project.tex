@@ -26,8 +26,10 @@
 \usepackage[backend=biber,
             hyperref,
             doi=false,
+            isbn=false,
             sorting=none,
             style=alphabetic]{biblatex}
+\renewbibmacro{in:}{}
 \addbibresource{sources.bib}
 
 % Figure options
