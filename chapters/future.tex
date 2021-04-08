@@ -1,8 +1,14 @@
 \chapter{Future Work}
 
-Kauffman bound is sharp and computable for (most) 3-twist pretzel knots and for all 2-bridge knots. 
+The question of interest is whether there exist Lagrangian cobordisms from the unknot to all max-$\tb$ ribbon knots. In this paper we showed that this is true for a large family of ribbon pretzel knots, but our solution does not give information about the answer to this question in general. 
 
-There are three families of 2-bridge ribbon knots -- could try those??
-Check the bridge indices of the knots you're stuck on (or even the ones you've solved):  any information there?
+Our solution made use of a parameterization of ribbon pretzel knots, and we computed the maximal $tb$ using an explicit formula for the Kauffman bound. There is another class of ribbon knots for which this approach might work --- 2-bridge knots.
+The Kauffman bound is known to be sharp for these knots \cite{ng}, and an algorithm exists for computing it \cite{luzhong-2bridge}, much like the algorithm we used for pretzel knots.
+Moreover, many of the prime knots for which we have failed to explicitly find maximal-$\tb$ cobordisms from the unknot are 2-bridge: for example, $8_8$ and $8_9$. In fact, there are several known families of 2-bridge ribbon knots, and it is conjectured that these families include all 2-bridge ribbon knots \cite{lamm}.
 
-Symmetric unions seem to be popping up:
+Yet in the case of the pretzel knots $P(3, -3, n)$, our proof relied on an explicit stabilized unknot for each $n$ such that each cobordism could be constructed using the exact same sequence of moves.
+If a similar method could be used to prove the existence of such cobordisms for 2-bridge knots, the first step would be to find a single explicit example --- which so far we have failed to do.
+
+It is also possible that a slightly different conjecture will be easier to answer: the existence of such Lagrangian cobordisms for \emph{nonstabilized} ribbon knots. This is a stronger statement, as all max-$\tb$ knots are nonstabilized, but for some knots there exist multiple nonstabilized representatives with different $\tb$. Attempting to answer the question this way avoids the computation of the maximal $\tb$ and therefore the Kauffman polynomial, and any answer would instead make use of augmentations and rulings (recall that stabilized knots have no normal rulings).
+
+

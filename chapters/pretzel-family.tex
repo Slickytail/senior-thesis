@@ -1,18 +1,39 @@
 \chapter{The \texorpdfstring{$P(3, -3, n)$}{P(3, -3, n)} family}
 \section{Motivation}
+There is no general method of finding Lagrangian cobordisms, and there are very few sufficient conditions for their existence.
+A natural way of refining this question is to restrict either $K_-$ or $K_+$.
+In particular, we want to know under what conditions there exists a decomposable cobordism from the unknot $U$ to some Legendrian knot $K$. This choice is not arbitrary: none of the known obstructions give information about the existence of such cobordisms when $\maxtb K \leq -1$.
+
+A good candidate for this search is the class of knots called ribbon knots, which we define here.
+
+\begin{definition}
+    A knot $K$ is said to be \textbf{ribbon} if $K$ bounds a smoothly embedded disk $d: D \to \R^3$ with only ribbon singularities.
+    That is, every region of self-intersection of $d$ is an arc $A \in \R^3$ such that the preimage of $A$, $d^{-1} (A)$, consists of two arks in $D$ of which one is within the interior of $D$ and the other has its endpoints on the boundary of $D$.
+\end{definition}
+
+This definition is more clear alongside a ribbon diagram, Figure~\ref{fig:ribbon-knots-kawauchi}.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/ribbon-knots-kawauchi.png}
+    \caption{Ribbon Diagrams, from Kawauchi. TODO: Make your own}%
+    \label{fig:ribbon-knots-kawauchi}
+\end{figure}
+
+Ribbon knots are a natural class to try to find Lagrangian cobordisms to, as topologically there always exist cobordisms of any ribbon knot with the unknot.
 In the case of Legendrian knots it is clear that ribbon knots can be constructed from a sufficiently stabilized unknot using the Reidemeister moves, one 0-handle, and one 1-handle. 
-Starting from the unknot, we add a second unknot with a zero-handle, and then use Legendrian isotopy to "pass" the tip of the first unknot through the two loops as desired, before finally using a 1-handle to join the ribbon tip to the second unknot, thus closing the knot. 
+Starting from the unknot, we add a second unknot with a zero-handle, and then use Legendrian isotopy to "pass" the tip of the first unknot through the two loops as desired, before finally using a 1-handle to join the ribbon tip to the second unknot, thus closing the knot. Thus in the case of ribbon knots, the answer to the question of whether there exists a Lagrangian cobordism from $U$ to $K$ is a trivial ``yes''.
 
-The cobordism created by these moves is necessarily a concordance: The surfaces corresponding to each unknot have genus zero before the addition of the 1-handle, which connects them in only one place. In a constructible cobordism, genus can only be created by a 1-handle between connected components.
+The cobordism created by these moves is necessarily a concordance: The surfaces corresponding to each unknot have genus zero before the addition of the 1-handle, which connects them in only one place. In a decomposable cobordism, genus can only be created by a 1-handle between connected components.
 
-Thus to construct such a cobordism to a ribbon knot $K$, we have to start with an unknot $U$ with $\tb U = \tb K$. Given the topological knot type of $K$, the unknot and $K$ must certainly have $\tb \leq \overline{\tb} K$.
+Thus to construct such a cobordism to a ribbon knot $K$, we have to start with an unknot $U$ with $\tb U = \tb K$. Given the topological knot type of $K$, the unknot and $K$ must certainly have $\tb \leq \maxtb K$.
 It is an open question when this can be achieved with equality: that is, when a cobordism can be constructed from a stabilized unknot to a maximal-$\tb$ Legendrian ribbon knot.
 
-\section{Introduction of Result}
-The main result of this project is the demonstration of a family of ribbon knots for which such a cobordism may be constructed with maximal Thurston-Bennequin number.
+\section{Constructions of Cobordisms}
+The main result of this project is the demonstration of a family of ribbon knots for which such a cobordism may be constructed with maximal Thurston-Bennequin number. Figure~\ref{fig:pretzel-knot} shows a diagram of this family.
 
 \begin{theorem}\label{thm:mine}
-    Let $P_n = P(3, -3, n)$, for $n$ an integer. Then there exists a constructable Lagrangian concordance from an unknot $U$ with $\tb U = \maxtb P_n$ to a Legendrian representative of $P_n$.
+    Let $P_n = P(3, -3, n)$, for $n$ an integer. Then there exists a Legendrian representative $K$ of $P_n$ and a Legendrian unknot $U$ with $\tb K = \tb U = \maxtb P_n$, such that there is a decomposable Lagrangian concordance from $U$ to $K$.
 \end{theorem}
 
 \begin{figure}[ht!]
@@ -24,10 +45,10 @@ The main result of this project is the demonstration of a family of ribbon knots
 
 For example, $P(3, -3, 0) = 3_1 \# m(3_1)$. Further, $P_1 = 6_1$; $P_2 = 8_{20}$; $P_3 = 9_{46}$; and $P_4 = 10_{140}$. Further note that $P_n = m(P_{-n})$ \cite{kawauchi}.
 
-We sketch the construction used in the proof of Theorem \ref{thm:mine}. First, we make use of \cite{lu-zhong} to compute the Kauffman polynomial of $P(3, -3, n)$. From this we can obtain the Kauffman bound : it is $\maxtb{P_n} \leq \text{min}(-1, n-4)$. By Ng \cite{ng}, the Kauffman bound is sharp for $P_n$ (with the exception of $P_2$, but it is known that $\maxtb P_2 = -2$ and $\maxtb P_{-2} = -6$. This information is readily available in the Legendrian knot atlas\cite{atlas}.) and so $\maxtb P_n = \text{min} (-1, n-4)$.
+We sketch the construction used in the proof of Theorem~\ref{thm:mine}. First, we make use of \cite{lu-zhong} to compute the Kauffman polynomial of $P(3, -3, n)$. From this we can obtain the Kauffman bound : it is $\maxtb{P_n} \leq \text{min}(-1, n-4)$. By Ng \cite{ng}, the Kauffman bound is sharp for $P_n$ (with the exception of $P_2$, but it is known that $\maxtb P_2 = -2$ and $\maxtb P_{-2} = -6$. This information is readily available in the Legendrian knot atlas\cite{atlas}.) and so $\maxtb P_n = \text{min} (-1, n-4)$.
 
 With the desired $\tb$ in hand, we construct a suitable unknot according to $n$. We will use a combination of stabilization and $r_1$ moves to add a total of $n-1$ half-twists. There are three cases.
-\pagebreak
+
 \begin{itemize}
 
     \item[$n \leq 0$ :]
@@ -41,7 +62,7 @@ With the desired $\tb$ in hand, we construct a suitable unknot according to $n$.
 
     \item[$1 \leq n \leq 3$ :]
         Depending on $n$ this is $6_1$, $8_{20}$, or $9_{46}$. Each has a slightly different placement of twists.
-        \begin{figure}[h!]
+        \begin{figure}[ht!]
             \centering
             \includegraphics[width=0.3\textwidth]{images/pretzel-+1-construction.pdf} \hfill
             \includegraphics[width=0.3\textwidth]{images/pretzel-+2-construction.pdf} \hfill
@@ -51,7 +72,7 @@ With the desired $\tb$ in hand, we construct a suitable unknot according to $n$.
         \end{figure}
 
     \item[$n \geq 4$ :]
-        The desired $tb$ is $-1$. Using the $r_1$ move we can add as many half-twists as we like (ie, $n - 1$) to our unknot before we make the pinch move.
+        The desired $tb$ is $-1$. Using the $r_1$ move we can add as many half-twists as we like (i.e., $n - 1$) to our unknot before we make the pinch move.
         \begin{figure}[h!]
             \centering
             \includegraphics[width=0.4\textwidth]{images/pretzel-+4-construction.pdf}
