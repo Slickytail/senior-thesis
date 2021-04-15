@@ -1,43 +1,53 @@
 \chapter{Introduction}
-Knots
 
-Notes from Caitlin:
-Read through introductions for papers -- chantraine paper, cornwall, Ng, WiSCon, etc.
-As a thesis, probably wants more motivation. Etnyre's "Legendrian and Tranverse knots".
-Smooth knots study 3/4 dimensional smooth manifolds, Legendrian knots and Lagrangian cobordisms help us study contact and symplectic manifolds. 
-For an introduction, you're "selling" the result.
+Mathematical knots are conceptually similar to real twists of thread. But physical knots are of interest because of the friction between strands, while mathematical knots have no such interaction. Thus the primary question of interest in mathematical knot theory is the identification, classification, and equivalence of knots. By studying the "universe" of knots, we study the topology of Euclidian 3-space, $\R^3$.
 
-Write an outline!
-Compile list of topics. 
+We normally define two knots as equivalent if they are smoothly isotopic. But this is not the only possible equivalence relation, or even the only interesting one. Another that we will make use of in this paper is the existence of a cobordism --- a smooth 2-manifold having two knots as its boundary. The existence of a cobordism is a much weaker condition than knot equivalence, so it divides the universe of knots into classes.
 
-Motivation: if you have a cobordism and you stabilize both, you still have a cobordism. So finding cobordisms to max-tb representatives gives you cobordisms to all representatives.
-A lot is known about smooth cobordisms -- this project helps us know about the structure of Lagrangian cobordisms.
-Ribbons are helpful because they already "have" smooth cobordisms: we're interested in when the existence of a smooth cobordism gives us information (or even implies) the existence of a Lagrangian cobordism.
+We can also use knot theory to study spaces that are more complication than the normal $\R^3$. In particular, considering \emph{contact 3-manifolds}, in which we have associated a 1-form of interest with $\R^3$, we may restrict our universe to \emph{Legendrian} knots, on whose tangent vector the contact structure vanishes. This gives rise to the equivalence relation of Legendrian equivalence, which is \emph{strictly finer} than that of smooth equivalence. The structure of these equivalence classes is nontrivial but generally well-understood: from a handful of "maximal" representatives, the rest may be obtained by adding additional local twists.
+% That is, stabilizations.
 
-4-ball genus? 
+Moreover, every contact 3-manifold has a canonically associated \emph{symplectic 4-manifold}, equipped with a 2-form. Analogous to Legendrian curves in contact 3-manifolds are Lagrangian surfaces in symplectic 4-manifolds, which allow us to define a similar notion of cobordism for Legendrian knots. This relation is in a sense finer than that of smooth cobordism, as the existence of a Lagrangian cobordism implies the existence of a smooth one, but it is not an equivalence relation as it is not symmetric.
 
-Comments on thesis: 
-    - update the abstract:
-        - say something a little bit more concrete about what Lagrangian knots (maybe give a semi-definition of knots)?
-        - Lagrangian submanifolds NOT "stretching between": the knots are slices of them.
-    - Consistently use bold for definition
-    - Maybe use capital greek letters for Legendrian knots?
-    - Mention the right-hand rule for why the positive $y$ direction points into the page.
-    - Cusp slopes don't have to approach zero, but they really just have to approach the same slope.
-    - Consider adding a 3D rendering of a Legendrian knot. Sabloff has a nice one?
-    - State Reidemeister move equivalence as theorems for both smooth and legendrian. give pictures of smooth reidemeister. Mention that reidemeister plus planar isotopy is necessary. 
-    - Define orientation of knots (maybe before you define tb?)
-    - Clarify upward and downward pointing -- $t$ increasing?
-    - Mention that we'll talk about the difference between our definition and Lu-Zhong method.
-    - Give an example of computing Kauffman polynomial.
+Smooth cobordisms have been extensively studied, but much less is known about their Lagrangian counterparts. In addition to several known necessary conditions (that is, obstructions), for the existence of Lagrangian cobordisms, there are diagrammatically-defined sufficient conditions, but in practice it is difficult to construct cobordisms using the sufficient condition. The main result of this thesis is an infinite family of knots, $\{P_n\}$, for which there exists a Lagrangian cobordism from the unknot to the maximal representative of $P_n$, for each $n$.
 
-April 02:
-    - Add a sentence of introduction to each section, or maybe even subsection
-    - Elaborate on smooth cobordisms in introduction to them.
-    - Everywhere tangent to *kernel* of differential form
-    - In defn. of smooth cobordism: mention "with boundary".
-    - clarify "bottom" and "top".
-    - ${ }$ to avoid line wrapping. In general, don't line wrap equations.
-    - Mention that cobordism "movies", arrow points in direction of increasing $t$.
+%Notes from Caitlin:
+%Read through introductions for papers -- chantraine paper, cornwall, Ng, WiSCon, etc.
+%As a thesis, probably wants more motivation. Etnyre's "Legendrian and Tranverse knots".
+%Smooth knots study 3/4 dimensional smooth manifolds, Legendrian knots and Lagrangian cobordisms help us study contact and symplectic manifolds. 
+%For an introduction, you're "selling" the result.
+%
+%Write an outline!
+%Compile list of topics. 
 
-Consider moving the section on Kauffman polynomial into the chapter on knots...
+%Motivation: if you have a cobordism and you stabilize both, you still have a cobordism. So finding cobordisms to max-tb representatives gives you cobordisms to all representatives.
+%A lot is known about smooth cobordisms -- this project helps us know about the structure of Lagrangian cobordisms.
+%Ribbons are helpful because they already "have" smooth cobordisms: we're interested in when the existence of a smooth cobordism gives us information (or even implies) the existence of a Lagrangian cobordism.
+%
+%4-ball genus? 
+
+%Comments on thesis: 
+%    - update the abstract:
+%        - say something a little bit more concrete about what Lagrangian knots (maybe give a semi-definition of knots)?
+%        - Lagrangian submanifolds NOT "stretching between": the knots are slices of them.
+%    - Consistently use bold for definition
+%    - Maybe use capital greek letters for Legendrian knots?
+%    - Mention the right-hand rule for why the positive $y$ direction points into the page.
+%    - Cusp slopes don't have to approach zero, but they really just have to approach the same slope.
+%    - Consider adding a 3D rendering of a Legendrian knot. Sabloff has a nice one?
+%    - State Reidemeister move equivalence as theorems for both smooth and legendrian. give pictures of smooth reidemeister. Mention that reidemeister plus planar isotopy is necessary. 
+%    - Define orientation of knots (maybe before you define tb?)
+%    - Clarify upward and downward pointing -- $t$ increasing?
+%    - Mention that we'll talk about the difference between our definition and Lu-Zhong method.
+%    - Give an example of computing Kauffman polynomial.
+
+%April 02:
+%    - Add a sentence of introduction to each section, or maybe even subsection
+%    - Elaborate on smooth cobordisms in introduction to them.
+%    - Everywhere tangent to *kernel* of differential form
+%    - In defn. of smooth cobordism: mention "with boundary".
+%    - clarify "bottom" and "top".
+%    - ${ }$ to avoid line wrapping. In general, don't line wrap equations.
+%    - Mention that cobordism "movies", arrow points in direction of increasing $t$.
+
+%Consider moving the section on Kauffman polynomial into the chapter on knots...
