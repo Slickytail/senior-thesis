@@ -180,11 +180,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.78347848"
-     inkscape:cx="735.88397"
-     inkscape:cy="241.84117"
+     inkscape:zoom="0.78620224"
+     inkscape:cx="251.04794"
+     inkscape:cy="309.39747"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="true"
      units="in"
@@ -250,15 +250,15 @@
        sodipodi:nodetypes="czczzczzczczzczzc" />
     <g
        id="g1648"
-       style="fill:none;fill-opacity:1;stroke:#1b6f97;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#003cb4;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        transform="matrix(1,0,0,0.8125,0,38.1)">
       <path
-         style="fill:none;fill-opacity:1;stroke:#1b6f97;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#003cb4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 63.499999,203.2 C 63.5,120.65 69.85,19.05 50.8,0"
          id="path1641"
          sodipodi:nodetypes="cc" />
       <path
-         style="fill:none;fill-opacity:1;stroke:#1b6f97;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#003cb4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 139.7,203.2 c 0,0 0,-57.15 12.7,-63.5 12.7,-6.35 -12.7,-33.60987 -12.7,-76.2 C 139.7,20.909872 152.4,0 152.4,0"
          id="path1643"
          sodipodi:nodetypes="czzc" />
@@ -330,7 +330,7 @@
    id="tspan55">−</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';letter-spacing:0px;fill:#1b6f97;fill-opacity:1;stroke:none;stroke-width:0.40867;stroke-opacity:1"
+       style="font-size:12.7px;line-height:1.25;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';letter-spacing:0px;fill:#003cb4;fill-opacity:1;stroke:none;stroke-width:0.40867;stroke-opacity:1;"
        x="150.68921"
        y="133.90358"
        id="text1707"
@@ -339,6 +339,6 @@
          id="tspan1705"
          x="150.68921"
          y="133.90358"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro Italic';fill:#1b6f97;fill-opacity:1;stroke:none;stroke-width:0.40867;stroke-opacity:1">L</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro Italic';fill:#003cb4;fill-opacity:1;stroke:none;stroke-width:0.40867;stroke-opacity:1;">L</tspan></text>
   </g>
 </svg>

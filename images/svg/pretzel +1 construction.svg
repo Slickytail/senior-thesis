@@ -18,6 +18,48 @@
      id="defs26">
     <marker
        style="overflow:visible;"
+       id="Arrow1Mend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path902" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="SquareS"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="SquareS"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M -5.0,-5.0 L -5.0,5.0 L 5.0,5.0 L 5.0,-5.0 L -5.0,-5.0 z "
+         id="path969" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Mend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path920" />
+    </marker>
+    <marker
+       style="overflow:visible;"
        id="marker1193"
        refX="0.0"
        refY="0.0"
@@ -54,13 +96,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1536"
-     inkscape:window-height="864"
+     inkscape:window-width="841"
+     inkscape:window-height="812"
      id="namedview24"
      showgrid="true"
-     inkscape:zoom="0.39554937"
-     inkscape:cx="991.40297"
-     inkscape:cy="563.75592"
+     inkscape:zoom="0.14761141"
+     inkscape:cx="2271.9938"
+     inkscape:cy="720.67231"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -87,11 +129,11 @@
     </rdf:RDF>
   </metadata>
   <path
-     style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:none;stroke:#000000;stroke-width:2.00349957;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
      d="M 165.38889,12.722224 V 89.05556 165.38889 H 89.055554 v -25.44444 h -25.44444 v 25.44444 H 38.166664 V 114.5 H 114.5 v 25.44445 h 25.44444 V 89.05556 H 38.166664 V 12.722224 Z"
      id="path82" />
   <path
-     style="fill:none;stroke:#000000;stroke-width:1.00175;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1193)"
+     style="fill:none;stroke:#000000;stroke-width:2.00349957;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
      d="m 203.55556,101.77778 h 76.33333"
      id="path907" />
   <g
@@ -100,30 +142,39 @@
      stroke-linecap="square"
      stroke-miterlimit="5"
      id="g20-3"
-     transform="rotate(90.07116,254.55555,254.38171)">
+     transform="rotate(90.07116,254.55555,254.38171)"
+     style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none">
     <path
        d="M 178,71 V 25 H 26 v 127 h 76 v -20"
-       id="path4-6" />
+       id="path4-6"
+       style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none" />
     <path
        d="M 102,122 V 107"
-       id="path6-7" />
+       id="path6-7"
+       style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none" />
     <path
        d="M 102,97 V 51 h 51 v 20"
-       id="path8-5" />
+       id="path8-5"
+       style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none" />
     <path
        d="m 153,81 v 20 H 51 v 46"
-       id="path10-3" />
+       id="path10-3"
+       style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none" />
     <path
        d="m 51,158 v 46 H 203 V 77 h -76 v 20"
-       id="path12-5" />
+       id="path12-5"
+       style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none" />
     <path
        d="M 76,147 V 127 H 178 V 81"
-       id="path14-6" />
+       id="path14-6"
+       style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none" />
     <path
        d="m 127,107 v 15"
-       id="path16-2" />
+       id="path16-2"
+       style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none" />
     <path
        d="m 127,132 v 46 H 76 v -20"
-       id="path18-9" />
+       id="path18-9"
+       style="stroke-width:2.00349957;stroke-miterlimit:5;stroke-dasharray:none" />
   </g>
 </svg>

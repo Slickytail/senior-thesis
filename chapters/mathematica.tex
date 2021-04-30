@@ -1,4 +1,4 @@
-\chapter{Mathematica Code for Kauffman Bound Computation}\label{chap:appendix}
+\chapter{Mathematica Code for Kauffman Bound Computation}\label{ch:appendix}
 
 \lstset{language=Mathematica,style=better}
 Throughout, the pretzel knot $P(a, b, c)$ is encoded by the list \lstinline|{a, b, c}|.
@@ -22,7 +22,7 @@ LuZhong[q_] :=
     d * M[[3]] . Table[Times @@ (M[[j]] . {s, -si, ai}^#1 &) /@ q, {j, 3}]
 \end{lstlisting}
 
-Now we compute the "standard" Dubrovnik polynomial. To do this we need to rewrite the equation in the variables $a, z$ where $z = s - s^{-1}$. This shouldn't affect the bound but it is worthwhile nonetheless.
+Now we compute the ``standard'' Dubrovnik polynomial. To do this we need to rewrite the equation in the variables $a, z$ where $z = s - s^{-1}$. This shouldn't affect the bound but it is worthwhile nonetheless.
 
 \begin{lstlisting}
 Dubrovnik[q_] :=

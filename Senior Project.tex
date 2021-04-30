@@ -22,6 +22,16 @@
 \DeclareMathOperator{\tpm}{T}
 \newcommand{\maxtb}{\overline{\tb}\,}
 
+\newtheorem{mythm}{Theorem}
+\renewcommand{\themythm}{\Alph{mythm}}
+\newtheorem*{mythmcopy}{Theorem~\ref{thm:mine}}
+
+%\newenvironment{myproof}[1][\proofname]{%
+%  \begin{proof}[#1]$ $\par\nobreak\ignorespaces
+%}{%
+%  \end{proof}
+%}
+
 % Bibliography options
 \usepackage[backend=biber,
             hyperref,
@@ -34,44 +44,9 @@
 
 % Figure options
 \usepackage{graphicx}
-
-\usepackage{tikz}
-% Tikz Skein Relations
-\def\Lmin{\tikz[baseline=.6em, scale=2]{
-    \draw (0, 0) -- (1em, 1em);
-    \draw (1em, 0) -- (.6em, .4em);
-    \draw (0, 1em) -- (.4em, .6em);}
-}
-
-\def\Lplus{\tikz[baseline=.6em, scale=2]{
-    \draw (1em, 0) -- (0, 1em);
-    \draw (0, 0) -- (.4em, .4em);
-    \draw (.6em, .6em) -- (1em, 1em);}
-}
-
-\def\Lzero{\tikz[baseline=.6em, scale=2]{
-    \draw (0, 0) .. controls (0.5em, 0.5em) .. (0, 1em);
-    \draw (1em, 1em) .. controls (0.5em, 0.5em) .. (1em, 0);}
-}
-
-\def\Linf{\tikz[baseline=.6em, scale=2]{
-    \draw (0, 1em) .. controls (0.5em, 0.5em) .. (1em, 1em);
-    \draw (0, 0) .. controls (0.5em, 0.5em) .. (1em, 0);}
-}
-
-\def\Lr{\tikz[baseline=.32em, scale=2]{
-        \draw (1.15em, 0)
-        parabola (0.4em, 0.3em)
-        arc (225:-45:.3em)
-        -- (0.7em, 0.2em);
-        \draw (.1em, 0) parabola (.55em, .1em);}
-}
-\def\Ln{\tikz[baseline=.6em, scale=2]{
-    \draw (0, 0.5em) .. controls (0.5em, 0.6em) .. (1em, 0.5em);}
-}
-\def\Lu{\tikz[baseline=.6em, scale=2]{
-    \draw (0.5em, 0.5em) circle (0.5em);}
-}
+\usepackage[export]{adjustbox}
+\def\img{\includegraphics[height=3em, valign=c]}
+\def\imgs{\includegraphics[height=2.5em, valign=c]}
 
 % Mathematica listings setup
 \usepackage{xcolor}
