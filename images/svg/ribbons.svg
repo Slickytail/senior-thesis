@@ -42,11 +42,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.0036737"
-     inkscape:cx="432.32419"
-     inkscape:cy="204.98571"
+     inkscape:zoom="1.8758406"
+     inkscape:cx="277.98992"
+     inkscape:cy="135.20503"
      inkscape:document-units="in"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="true"
      units="in"
@@ -72,33 +72,32 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Layer 2"
-     sodipodi:insensitive="true">
+     inkscape:label="Layer 2">
     <path
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#0047d4;stroke-width:0.508;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.33333;stroke-dasharray:1.016, 1.016;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#2f60bf;stroke-width:0.76200005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.33333015;stroke-dasharray:1.5240001,0.76200005;stroke-dashoffset:0.45720003;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        d="m 71.120002,38.100001 h 10.16"
        id="path57" />
     <path
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#0047d4;stroke-width:0.508;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.33333;stroke-dasharray:1.016, 1.016;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#2f60bf;stroke-width:0.76200005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.33333015;stroke-dasharray:1.5240001,0.76200005;stroke-dashoffset:0.45720003;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        d="M 15.24,63.500002 H 25.400001"
        id="path59" />
     <path
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#0047d4;stroke-width:0.508;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.33333;stroke-dasharray:1.016, 1.016;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#2f60bf;stroke-width:0.76200005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.33333015;stroke-dasharray:1.5240001,0.76200005;stroke-dashoffset:0.45720003;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        d="m 172.72,30.480001 h 5.08"
        id="path61" />
     <path
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#0047d4;stroke-width:0.508;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.33333;stroke-dasharray:1.016, 1.016;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#2f60bf;stroke-width:0.76200005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.33333015;stroke-dasharray:1.5240001,0.76200005;stroke-dashoffset:0.45720003;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        d="m 172.72,55.880001 h 5.08"
        id="path63" />
     <path
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#0047d4;stroke-width:0.508;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.33333;stroke-dasharray:1.016, 1.016;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#2f60bf;stroke-width:0.76200005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.33333015;stroke-dasharray:1.5240001,0.76200005;stroke-dashoffset:0.45720003;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        d="M 121.92,71.120002 H 127"
        id="path65" />
   </g>

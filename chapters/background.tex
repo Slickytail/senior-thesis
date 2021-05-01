@@ -152,20 +152,6 @@ This explains the cusps we see on the left and right sides of front diagrams: Si
 
 Moreover, in a front diagram there is no need to mark the overstrand at a crossing: unambiguously, the strand with a more negative slope goes over the other.
 
-One other way that we represent Legendrian knots is with \textbf{grid diagrams}. Grid diagrams are composed of axis-alined line segments on an integer grid with all the overstrands vertical.
-A grid diagram for the knot $5_2$ is shown in Figure~\ref{fig:grid}.
-A front diagram may be obtained from a grid diagram by rotating the figure $45^\circ$ counterclockwise (such that the overstrands run diagonally down), smoothing out the up and down corners, and sharpening the left and right corners into cusps. Similarly, a grid diagram can be obtained from a front diagram. 
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.3\textwidth]{images/5_2-grid.pdf}
-    \label{fig:grid}
-    \caption{A grid diagram for the knot $5_2$.}
-\end{figure}
-
-Often, grid diagrams are defined to include the requirement that each column or row of the grid contains exactly one segment --- that is, there are no disjoint collinear segments; such diagrams are also referred to as \textbf{arc diagrams}. This form makes grid diagrams a convenient way of representing Legendrian knots in computer programs, as it suffices to supply the coordinates of the corners. Since there are no disjoint collinear segments, each corner point shares a row with exactly one other point and a column with exactly one other. The knot can be drawn by connecting these corners, with the vertical strands running over the horizontal strands.
-
-
 \subsection{Classical Invariants}\label{subsec:invariants}
 
 Any knots which are Legendrian equivalent are also smoothly equivalent by definition, so let us ask whether the converse is true.
@@ -292,7 +278,6 @@ In particular, we are interested in the Kauffman polynomial, as it gives an uppe
 % This is imprecise -- clarify the L polynomial, Kauffman, Normalized, etc.
 There are many varying definitions of the Kauffman polynomial in the literature. We use here a variant known as the \textbf{Dubrovnik polynomial} (it was discovered in the city of Dubrovnik in then-Yugoslavia \cite{kauffman}), and we refer to its normalized version as the \textbf{Kauffman polynomial}. 
 It is known that the Dubrovnik polynomial and other formulations of the Kauffman polynomial are interconvertible \cite{kauffman}.
-Our formulation matches that used by \cite{ferrand} and is similar to that used by \cite{lu-zhong}. See Appendix \ref{ch:appendix} for details on their version.
 
 Let $T$ be a knot diagram or an oriented link diagram, and define the \textbf{Dubrovnik Polynomial} $D$ recursively via the following skein relations, where ${\delta = \frac{a - a^{-1}}{z} + 1}$.
 \begin{align}
@@ -355,10 +340,14 @@ Normalizing by the writhe, which is readily seen to be 3, we have at last the Ka
 \]
 
 
-The degree of the framing variable $a$ in the Kauffman polynomial gives rise to an upper bound on the $\tb$, which was first proved by Rudolph \cite{rudolph}. The version we use here is due to Tabachnikov \cite{tabachnikov}. More information on this bound and its history can be found in \cite{ferrand}.
+The degree of the framing variable $a$ in the Kauffman polynomial gives rise to an upper bound on the $\tb$, which was first proved by Rudolph \cite{rudolph}. The version we use here is due to Tabachnikov \cite{tabachnikov}, though we use the notation of \cite{rutherford}. More information on this bound and its history can be found in \cite{ferrand}.
 
 \begin{theorem}[Kauffman Bound \cite{tabachnikov}]\label{kauffman-bound}
-    If $K$ is a Legendrian knot, then $\maxtb K \leq \mu_a(Y(K))$, where $\mu_a(P)$ denotes the minimum degree of $a$ in the polynomial $P(a, z)$.
+    If $K$ is a Legendrian knot, then 
+    \[
+        \maxtb K \leq - \deg_a Y(K),
+    \]
+    where $deg_a P$ denotes the maximum exponent of $a$ in the polynomial $P(a, z)$.
 \end{theorem}
 
 This bound is very useful: there is no method in general for computing the maximal $\tb$ of a knot, but it is a fairly straightforward matter to compute its Kauffman polynomial. The bound fails to be sharp in some known cases (e.g., \cite{ferrand}) but there are also classes of knots for which it is known to be sharp. These include positive knots, most torus knots, 2-bridge links, and most 3-twist pretzel links. That the Kauffman bound is sharp for many 3-twist pretzel links is a theorem of Ng:
@@ -446,7 +435,7 @@ We refer to a cobordism that is a result of a sequence of these moves as \textbf
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/cobordism-movie.pdf}
+    \includegraphics[width=0.8\textwidth]{images/cobordism-movie--1.pdf}
     \caption{Constructing a Lagrangian cobordism from the unknot to a Legendrian $6_1$.}
     \label{fig:cobordism-construction}
 \end{figure}

@@ -12,6 +12,8 @@
 
 % Math commands
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\newcommand{\setmuskip}[2]{#1=#2\relax}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
@@ -26,11 +28,6 @@
 \renewcommand{\themythm}{\Alph{mythm}}
 \newtheorem*{mythmcopy}{Theorem~\ref{thm:mine}}
 
-%\newenvironment{myproof}[1][\proofname]{%
-%  \begin{proof}[#1]$ $\par\nobreak\ignorespaces
-%}{%
-%  \end{proof}
-%}
 
 % Bibliography options
 \usepackage[backend=biber,
@@ -61,7 +58,7 @@
     breakatwhitespace=false,         
     breaklines=true,                 
     keepspaces=true,                 
-    numbersep=5pt                  
+    belowskip=-3pt
 }
 % Bring on the Behemoth
 \usepackage{bardtex}
@@ -73,21 +70,18 @@
 
 \abstr
 
-
-In the study of Legendrian knots, which are constrained by a differential geometric condition, an area of active interest is conditions for the existence of Lagrangian Cobordisms, which are Lagrangian submanifolds stretching between two embedded Legendrian knots.
-Some such cobordisms can be constructed by a sequence of basic moves; they are called constructible.
-For any topological ribbon knot $T$, one can construct such a cobordism from some Legendran unknot $U$ to a Legendrian representative $K$ of $T$.
-We demonstrate a family of ribbon knots for which there exist constructible cobordisms from a stabilized unknot $U$ to a maximal-TB Legendrian representative of the ribbon knot.
+In the study of Legendrian knots, which are smoothly embedded circles constrained by a differential geometric condition, an actively-studied problem is to find conditions for the existence of Lagrangian cobordisms, which are Lagrangian surfaces whose slices resemble specific Legendrian knots towards the extrema.
+Any topological knot has infinitely many distinct Legendrian representatives, which are partially distinguished by the Thurston-Bennequin number $\tb$, an integer invariant of Legendrian isotopy which is bounded above.
+We demonstrate a family of knots of which each has a maximal-$\tb$ representative $K$ admitting a Lagrangian cobordism from a stabilized Legendrian unknot, a property which guarantees the existence of similar cobordisms from the unknot to all representatives resulting from stabilization of $K$.
 
 \dedic
 
-Dedicated to...
+Dedicated to my 10\textsuperscript{th} and 11\textsuperscript{th} grade math teachers, George Palen and Masha Albrecht, respectively. Mr. Palen gave me challenging open-ended problems to work on when I was bored with the curriculum, and Ms. Albrecht introduced me to calculus --- how one can learn calculus without immediately falling in love with mathematics is beyond me. 
 
 \acknowl
 
-My advisor, Caitlin Leverson...
-
-Howie Qu
+My wonderful advisor Caitlin Leverson for guiding me forcefully but manageably into this project.\\
+Everyone to whom I have tried and failed to explain what Legendrian knots are.
 
 \tableofcontents
 

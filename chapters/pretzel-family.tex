@@ -11,11 +11,11 @@ A good candidate for this search is the class of knots called ribbon knots, whic
     That is, every region of self-intersection of $d$ is an arc $A \in \R^3$ such that the preimage of $A$, $d^{-1} (A)$, consists of two arcs in $D$ of which one is within the interior of $D$ and the other has its endpoints on the boundary of $D$.
 \end{definition}
 
-This definition is more clear alongside a ribbon diagram, Figure~\ref{fig:ribbon-knots}.
+This definition is more clear alongside a ribbon diagram, Figure~\ref{fig:ribbons}.
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/ribbons.pdf}
+    \includegraphics[width=0.6\linewidth]{images/ribbons.pdf}
     \caption{Diagrams for some ribbon knots, with the arcs of self-intersection marked in blue. The forms of these ribbons come from \cite{kawauchi}.}
     \label{fig:ribbons}
 \end{figure}
@@ -28,11 +28,12 @@ The cobordism created by these moves is necessarily a concordance: Each 1-handle
 Thus to construct such a cobordism to a Legendrian ribbon knot $K$, we have to start with a Legendrian unknot $U$ with $\tb U = \tb K$. Given the topological knot type of $K$, the unknot and $K$ must certainly have $\tb \leq \maxtb K$.
 It is an open question when this can be achieved with equality: that is, when a cobordism can be constructed from a stabilized unknot to a maximal $\tb$-Legendrian ribbon knot.
 
+
 \section{Constructions of Cobordisms}\label{sec:thm-a-proof}
 The main result of this project, Theorem~\ref{thm:mine}, is the demonstration of an infinite family of knots, each of which has a maximal $\tb$-Legendrian representative admitting such a cobordism from the unknot.
 
 \begin{mythm}\label{thm:mine}
-    Let $P_n = P(3, -3, n)$, for $n$ an integer. Then there exists a Legendrian representative $K$ of $P_n$, and a Legendrian unknot $U$ with $\tb K = \tb U = \maxtb P_n$, such that there is a decomposable Lagrangian concordance from $U$ to $K$.
+    Let $P_n = P(3, -3, n)$ (the knot shown in Figure~\ref{fig:pretzel-knot}), for $n$ an integer. Then there exists a Legendrian representative $K$ of $P_n$, and a Legendrian unknot $U$ with ${\tb K = \tb U = \maxtb P_n}$, such that there is a decomposable Lagrangian concordance from $U$ to $K$.
 \end{mythm}
 
 Figure~\ref{fig:pretzel-knot} shows a diagram of a knot in this family.
@@ -41,21 +42,21 @@ For example, $P(3, -3, 0) = 3_1 \# m(3_1)$. Further, $P_1 = 6_1$; $P_2 = 8_{20}$
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.4\textwidth]{images/pretzel-knot.pdf}
-    \label{fig:pretzel-knot}
     \caption{The pretzel knot $P(3, -3, n)$. On the right, there are $n$ left half-twists if $n$ is positive, and $|n|$ \emph{right} half-twists if $n$ is negative.}
+    \label{fig:pretzel-knot}
 \end{figure}
 
 We break the proof of this theorem into the following two lemmas.
 \begin{lemma}\label{lem:tb}
     \[
-        \maxtb P_n = \min \{ n-4, -1\}.
+        \maxtb P_n = \min \{ -n-4, -1\}.
     \]
 \end{lemma}
 
 \begin{lemma}\label{lem:cobordism}
     For each $P_n$, there exists a Legendrian representative $K$ of $P_n$ and a stabilized Legendrian unknot $U$ such that 
     \[
-        \tb K = \tb U = \min \{n-4, -1\},
+        \tb K = \tb U = \min \{-n-4, -1\},
     \]
     and there exists a decomposable Lagrangian concordance from $U$ to $K$.
 \end{lemma}
@@ -64,17 +65,17 @@ The proof of Theorem~\ref{thm:mine} follows trivially from Lemmas~\ref{lem:tb}~a
 
 \begin{proof}[Proof of Lemma~\ref{lem:tb}]
 
-    We first compute the minimal degree of $a$ in the Kauffman polynomial of $P_n$; as this will give us a bound on $\maxtb P_n$ by Theorem~\ref{kauffman-bound}. We use the method from \cite{lu-zhong} for computing the Kauffman polynomial of a pretzel knot, and find that the minimal degree of $a$ in $Y(P_n)$ is given by $\min\{n-4, -1\}$. We implemented this computation in Mathematica; for details see Appendix~\ref{ch:appendix}.
+    We first compute the minimal degree of $a$ in the Kauffman polynomial of $P_n$; as this will give us a bound on $\maxtb P_n$ by Theorem~\ref{kauffman-bound}. We use the method from \cite{lu-zhong} for computing the Kauffman polynomial of a pretzel knot, and find that the minimal degree of $a$ in $Y(P_n)$ is given by $\min\{-n-4, -1\}$. We implemented this computation in Mathematica; for details see Appendix~\ref{ch:appendix}.
     
-    By Theorem~\ref{thm:ng} (Ng), the Kauffman bound is sharp for the pretzel link $P(3, -3, n)$ except when $n = 0$ or $n = \pm 2$. That is, $\maxtb P_n = \min\{n-4, -1\}$ for $n \neq 0$ and $n \neq \pm 2$. We will deal with these cases presently.
+    By Theorem~\ref{thm:ng} (Ng), the Kauffman bound is sharp for the pretzel link $P(3, -3, n)$ except when $n = 0$ or $n = \pm 2$. That is, ${\maxtb P_n = \min\{-n-4, -1\}}$ for $n \neq 0$ and $n \neq \pm 2$. We will deal with these cases presently.
 
-    In the case where $n = 0$, $P_0 = 3_1 \# m(3_1)$. The Thurston-Bennequin number of a connected sum is well known (\cite{torisu}, \cite{honda}). In particular,
+    In the case where $n = 0$, ${P_0 = 3_1 \# m(3_1)}$. The Thurston-Bennequin number of a connected sum is well known (\cite{torisu}, \cite{honda}). In particular,
     \[
         \maxtb{K_1 \# K_2} = \maxtb K_1 + \maxtb K_2 + 1.
     \]
     Thus $\maxtb P_0 = -6 + 1 + 1 = -4$ as desired.
 
-    In the case where $n = \pm 2$, we have $P_2 = 8_{20}$ and $P_{-2} = m(8_{20})$, and therefore $\maxtb P_2 = -2 = 2-4$ and $\maxtb P_{-2} = -6 = -2-4$ as desired.
+    In the case where $n = \pm 2$, we have $P_2 = 8_{20}$ and $P_{-2} = m(8_{20})$, and therefore ${\maxtb P_2 = -6 = -2-4}$ and ${\maxtb P_{-2} = -2 = 2-4}$ as desired.
 
     Note that we have obtained the values for $\maxtb$ of $3_1$ and $8_{20}$ from \cite{atlas}.
 
@@ -83,39 +84,64 @@ The proof of Theorem~\ref{thm:mine} follows trivially from Lemmas~\ref{lem:tb}~a
 
 \begin{proof}[Proof of Lemma~\ref{lem:cobordism}]
 
-    Depending on the value of $n$, there are five cases.
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/isotopy-presentable.pdf}
+        \caption{Smooth isotopy from the pretzel diagram for $P(3, -3, n)$ to a twisted ribbon.}
+        \label{fig:isotopy}
+    \end{figure}
 
-    In each, we first construct a suitable unknot $U$ with the desired $\tb$, using stabilizations and RI moves to add a total of $n-1$ half-twists, and we show the form of the desired Legendrian representative $K$. We then use the decomposable moves to describe a decomposable Lagrangian cobordism from $U$ to $K$. 
+    Depending on the value of $n$, there are three cases.
+
+    In each, we first construct a suitable unknot $U_n$ with the desired $\tb$, using stabilizations or RI moves to add a total of $n-1$ half-twists, and we show the form of the desired Legendrian representative $K_n$. Figure~\ref{fig:isotopy} verifies that $K_n$ is in fact smoothly isotopic to $P(3, -3, n)$.
+
+    We then use the decomposable moves to describe a decomposable Lagrangian cobordism from $U_n$ to $K_n$. A more detailed example of this construction is seen in Figure~\ref{fig:cobordism-construction}.
 
 \begin{itemize}
 
-    \item[$n \leq 0$ :]
-        The desired $\tb$ is $n-4$. We start with an unknot as seen below, stabilized $|n - 1|$ times in order to add $|n - 1|$ left half-twists. Pictured here is $P_{-2}$, with 3 left half-twists.
-        \begin{figure}[h!]
-            \centering
-            \includegraphics[width=0.4\textwidth]{images/pretzel--2-construction.pdf}
-            \label{fig:pretzel-2}
-            \caption{Unknot and resulting diagram for $P_{-2}$. THESE ARE LEFT TWISTS}
-        \end{figure}
+    \item[$n \geq -1$ :]
 
-    \item[$1 \leq n \leq 3$ :]
-        Depending on $n$ this is $6_1$, $8_{20}$, or $9_{46}$. Each has a slightly different placement of twists.
+        The desired $\tb$ is $-n-4$.
+        We start with an unknot stabilized $n+1$ times in order to add $n+1$ left half-twists, as seen on the left in Figure~\ref{fig:pretzel-geq}.
+        We add a 0-handle, and then use the Legendrian RII and RIII moves to thread the twisted band through both loops, before connecting them with a 1-handle.
+
+        As this cobordism is in fact a concordance, we have $\tb U_n = \tb K_n$, so it suffices to check that $\tb U_n = -n-4$. The diagram for $U_n$ has three right cusps and $n+1$ crossings, each of which is negative. Thus $\tb U_n = -(n+1) - 3 = -n-4$ as desired.
+
+        Note that in the case $n = -1$, the band is untwisted, as in Figure~\ref{fig:cobordism-construction}.
+
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.3\textwidth]{images/pretzel-+1-construction.pdf} \hfill
-            \includegraphics[width=0.3\textwidth]{images/pretzel-+2-construction.pdf} \hfill
-            \includegraphics[width=0.3\textwidth]{images/pretzel-+3-construction.pdf}
-            \label{fig:pretzel-singles}
-            \caption{Unknots and resulting diagrams for $P_1$, $P_2$, and $P_3$ respectively.}
+            \includegraphics[width=0.95\textwidth]{images/cobordism-movie-g0-short.pdf}
+            \caption{Cobordism movie for constructing $P_n$, where $n \geq 0$.}
+            \label{fig:pretzel-geq}
         \end{figure}
 
-    \item[$n \geq 4$ :]
-        The desired $\tb$ is $-1$. Using the RI move we can add as many right half-twists as we like (i.e., $n - 1$) to our unknot before we make the pinch move.
-        \begin{figure}[h!]
+    \item[$n = -2$ :]
+
+        Recall that $P_{-2} = m(8_{20})$, and its maximal $\tb$ is $-2$. In the twisted band we will have $1$ \emph{right} twist.
+
+        The diagram for the unknot $U_{-2}$, on the left, has 3 right cusps and a single crossing with positive sign. Thus $\tb U_{-2} = 1 - 3 = -2$.
+
+        \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.4\textwidth]{images/pretzel-+4-construction.pdf}
-            \label{fig:pretzel+4}
-            \caption{Unknot and resulting diagram for $P_{4}$.}
+            \includegraphics[width=0.95\textwidth]{images/cobordism-movie--2-short.pdf}
+            \caption{Construction of $P_{-2}$.}
+            \label{fig:pretzel--2}
+        \end{figure}
+
+    \item[$n \leq -3$ :]
+
+        The desired $\tb$ is $-1$. Using the RI move we can add as many right half-twists as we like (i.e., $|n| - 1$) to our unknot before we make the pinch move.
+
+        The diagram for $U_n$ has $|n|$ right cusps and $|n| - 1$ positive crossings, so $\tb U_n = (|n| - 1) - |n| = -1$ as desired.
+
+        Note that in Figure~\ref{fig:pretzel-leq} below, there are a total of $|n| - 1$ right half-twists, but one of them "stays behind" when we pass the ribbon tip through the loops.
+
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.95\textwidth]{images/cobordism-movie-l-3-short.pdf}
+            \caption{Construction of $P_n$, where $n \leq -3$.}
+            \label{fig:pretzel-leq}
         \end{figure}
 
 \end{itemize}
