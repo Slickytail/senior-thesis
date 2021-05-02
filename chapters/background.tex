@@ -70,7 +70,7 @@ For example, a reference to the knot $6_1$ as in Figure~\ref{fig:diagrams} shoul
 In order to define Legendrian knots we begin by defining a certain plane field on $\R^3$.
 
 \begin{definition}\label{defn:xi}
-    At each $(x, y, z) \in \R^3$ we define the \textbf{standard contact structure}, or $\xi$, by 
+    At each $(x, y, z) \in \R^3$ we define the \textbf{standard contact structure} $\xi$, seen in Figure~\ref{fig:contact-planes}, by 
     \[
         \xi(x, y, z) = \lspan \{\partial_y, \partial_x + y\partial_z\}.
     \]
@@ -107,8 +107,8 @@ Although no surface can be everywhere tangent to $\xi$, there are many \emph{cur
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{images/Sabloff-3D.pdf}
-    \label{fig:sabloff-3d}
     \caption{A 3D rendering of a Legendrian knot, showing the contact planes and the shadow of the knot in the $xz$ and $xy$-planes. Diagram from Joshua Sabloff, "What is a Legendrian Knot" \cite{sabloff-whatis}.}
+    \label{fig:sabloff-3d}
 \end{figure}
 
 As a knot is a smooth embedding of the circle in $\R^3$, so a Legendrian knot is a Legendrian embedding of the circle in $(\R^3, \xi)$. But the equivalence relation under which one defines a knot is as important as the curve itself, and so we will define an analogous relation for Legendrian knots. 
@@ -127,13 +127,21 @@ Such an approximation is smoothly isotopic to the target curve, and thus there e
 
 \subsection{Front Diagrams}
 
-Representatives of Legendrian knots are no different from smooth knots, in that they are embeddings of $S^1$ in $\R^3$, and so it is convenient to represent them by diagrams.
+How do we represent and record Legendrian knots? Legendrian knots are no different from smooth knots in that they are embeddings of $S^1$ in $\R^3$, and so it is convenient to represent them by diagrams.
 
 Unlike smooth knots, Legendrian knots contain geometric as well as topological information, and so we want our diagrams to record that information too. But because the geometric condition that Legendrian knots satisfy is not invariant under rotation, we must be careful to distinguish which plane we are projecting onto to create a diagram.
 
-There are two projections which are used to represent Legendrian knots. The first is the Lagrangian diagram, which is projection onto the $xy$ plane. This projection is useful in defining certain algebraic invariants, but we will not need it here.
-% Awk!
+There are two projections which are used to represent Legendrian knots. The first is the \textbf{Lagrangian projection}, which is projection onto the $xy$ plane. This projection is useful in defining certain algebraic invariants, but we will not need it here.
+
 Instead, we restrict our examination to the \textbf{front projection}, which is projection onto the $xz$ plane such that the positive $y$ direction points \emph{into} the page. This orientation agrees with the right-hand rule, where $z = x \times y$: the positive $x$ direction points to the east, the positive $z$ direction points north, and then the right-hand rule tells us that the positive $y$ direction points into the page.
+
+Front projections, Figure~\ref{fig:front-projection}, contain enough information to recover the exact geometry of the original knot. This is because the Legendrian condition is a requirement on the tangent vector based on the $y$-coordinate. Recall that a curve $K$ is Legendrian if ${\alpha = dz - y\, dx}$ vanishes on $\tpm_p K$ for all $p \in K$. Thus we have ${dz - y \, dx = 0}$ and so
+\[
+    y = \frac{dz}{dx}.
+\]
+This explains the cusps we see on the left and right local maxima of front diagrams: Since the part above the cusp (which has a negative slope, in the case of a right cusp) and the part below the cusp (which has a positive slope at a right cusp) have to meet, the slopes of each must be equal at the cusp. Note that while these points are cusps in the projection, they are smooth in the 3-dimensional knot.
+
+Moreover, in a front diagram there is no need to mark the overstrand at a crossing: unambiguously, the strand with a more negative slope goes over the other. In this thesis, we have chosen to mark the overstrands in front diagrams for ease of viewing.
 
 \begin{figure}[ht]
     \centering
@@ -144,18 +152,10 @@ Instead, we restrict our examination to the \textbf{front projection}, which is 
     \label{fig:front-projection}
 \end{figure}
 
-Front projections, Figure~\ref{fig:front-projection}, contain enough information to recover the exact geometry of the original knot. This is because the Legendrian condition is a requirement on the tangent vector based on the $y$-coordinate. Recall that a curve $K$ is Legendrian if ${\alpha = dz - y\, dx}$ vanishes on $\tpm_p K$ for all $p \in K$. Thus we have ${dz - y \, dx = 0}$ and so
-\[
-    y = \frac{dz}{dx}.
-\]
-This explains the cusps we see on the left and right sides of front diagrams: Since the part above the cusp (which has a negative slope, in the case of a right cusp) and the part below the cusp (which has a positive slope at a right cusp) have to meet, the slopes of each must be equal at the cusp. Note that while these points are cusps in the projection, they are smooth in the 3-dimensional knot.
-
-Moreover, in a front diagram there is no need to mark the overstrand at a crossing: unambiguously, the strand with a more negative slope goes over the other.
-
 \subsection{Classical Invariants}\label{subsec:invariants}
 
 Any knots which are Legendrian equivalent are also smoothly equivalent by definition, so let us ask whether the converse is true.
-As you may expect the answer is no. Moreover, since we can approximate any smooth knot by an isotopic Legendrian one, the relation of Legendrian equivalence ``refines'' the equivalence classes of smooth knots into a larger number of Legendrian equivalence classes.
+As intuition (and Figure~\ref{fig:front-projection}) may suggest, the answer is no. Moreover, since there exist Legendrian representatives of any smooth knot, the relation of Legendrian equivalence ``refines'' the equivalence classes of smooth knots into a larger number of Legendrian equivalence classes.
 The structure of this refinement is nontrivial, but we will begin to answer it by looking at Legendrian equivalence of front diagrams.
 
 We saw earlier that the equivalence of smooth knots corresponds to equivalence of diagrams under the Reidemeister moves. The smooth Reidemeister moves do not preserve Legendrian equivalence, but there exists a similar set of three diagrammatic moves, Figure~\ref{fig:redemeister}, which determine Legendrian equivalence of front diagrams.
@@ -171,7 +171,6 @@ We saw earlier that the equivalence of smooth knots corresponds to equivalence o
     Let $K$ and $K'$ be Legendrian knots, with $D$ a front diagram for $K$ and $D'$ a front diagram for $K'$.
     Then $K$ and $K'$ are Legendrian isotopic if and only if $D$ and $D'$ are related by a finite sequence of Legendrian Reidemeister moves (Figure~\ref{fig:redemeister}).
 \end{theorem}
-% TODO: Lagrangian Planar Isotopy??
 
 These moves correspond to restricted versions of the smooth Reidemeister moves.
 Unfortunately, as with the smooth Reidemeister moves, it is difficult in practice to determine equivalence of knots using these rules. Nonetheless, they are useful in the construction of more practical invariants, as invariance under all three Reidemeister moves is equivalent to invariance under Legendrian isotopy.
@@ -179,7 +178,8 @@ Unfortunately, as with the smooth Reidemeister moves, it is difficult in practic
 
 There are two numerical invariants which can be easily defined in and computed from the front projection, and they are called the \textbf{classical invariants}. Before we define them, we need to define the \textbf{writhe} of a diagram.
 
-To define the writhe $w(D)$ of a diagram $D$, we assign a sign to each crossing in $D$, using the right-hand rule as seen in Figure \ref{fig:writhe}. If as you travel along the overstrand, the understrand goes from right to left, then the crossing is positive; and if the understrand runs from left to right then the crossing is negative. 
+To define the writhe $w(D)$ of a diagram $D$, we assign a sign to each crossing in $D$, using the right-hand rule as seen in Figure \ref{fig:writhe}.
+If as you travel along the overstrand, the understrand goes from right to left, then the crossing is positive; and if the understrand runs from left to right, then the crossing is negative. 
 The writhe is the sum of the signs of the crossings.
 
 \begin{figure}[ht]
@@ -234,9 +234,9 @@ It is a simple matter to show that the Thurston-Bennequin number is an invariant
     As before, let $D$ be a front diagram for $K$. Neither RII nor RIII change the orientation or the number of cusps. On the other hand, RI creates a pair of cusps, one pointing upward and one pointing downward.
 \end{proof}
 
-These invariants do a good job of distinguishing Legendrian knots (see \cite{eliashberg2008unknot}), though there are known to be pairs of smoothly-isotopic Legendrian knots which have the same $\tb$ and rotation number but which are not Legendrian equivalent (Figure~\ref{fig:front-projection}, \cite{chekanov}). But the existence of these invariants reveals a great deal about how the Legendrian equivalence classes of a smooth knot are structured. 
+The classical invariants, $\tb$ and $\rot$, do a good job of distinguishing Legendrian knots  (see \cite{eliashberg2008unknot}), though there are known to be pairs of smoothly-isotopic Legendrian knots which have the same $\tb$ and rotation number but which are not Legendrian equivalent (Figure~\ref{fig:front-projection}, \cite{chekanov}). Nonetheless, they reveal a great deal about how the Legendrian equivalence classes of a smooth knot are structured. 
 
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \includegraphics[width=0.4\textwidth]{images/unknots.pdf}
     \caption{A selection of Legendrian unknots.}%
@@ -244,16 +244,18 @@ These invariants do a good job of distinguishing Legendrian knots (see \cite{eli
 \end{figure}
 
 % Awk
-Figure~\ref{fig:unknots} shows four Legendrian unknots. The top left has $\tb = -1$ and the others have $\tb = -2$, so the first is not isotopic to the rest. But all of the unknots with $\tb = -2$ are isotopic, and they can be obtained from the first by means of a so-called \textbf{stabilization}, shown in Figure~\ref{fig:stabilization}.
+Figure~\ref{fig:unknots} shows four Legendrian unknots. The top left has $\tb = -1$ and the others have $\tb = -2$, so the first is not isotopic to the rest. But all of the unknots with $\tb = -2$ are mutually isotopic, and they can be obtained from the first by means of a so-called \textbf{stabilization}, shown in Figure~\ref{fig:stabilization}.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/stabilization.pdf}
+    \includegraphics[width=0.6\linewidth]{images/stabilization.pdf}
     \caption{A ``positive'' stabilization, increasing the rotation number.}%
     \label{fig:stabilization}
 \end{figure}
 
-As mentioned in Subsection~\ref{subsec:contact}, the stabilization can be used to construct $C^0$ (that is, continuous) Legendrian approximations of smooth knots. We show two examples of how this may be done in Figure~\ref{fig:approximation}. Note that the first example demonstrates how to create a Legendrian approximation of a crossing in which the \emph{overstrand} has the more positive slope. With Legendrian approximation and the stabilization move in hand, it is clear that there are infinitely many distinct Legendrian representatives of each smooth knot.
+As mentioned in Subsection~\ref{subsec:contact}, the stabilization can be used to construct $C^0$ (that is, continuous) Legendrian approximations of smooth knots. We show two examples of how this may be done in Figure~\ref{fig:approximation}.
+Note that the first example demonstrates how to create a Legendrian approximation of a crossing in which the overstrand has the more \emph{positive} slope.
+With Legendrian approximation and the stabilization move in hand, it is clear that there are infinitely many distinct Legendrian representatives of each smooth knot.
 
 \begin{figure}[ht]
     \centering
@@ -266,9 +268,9 @@ A stabilization decreases the $\tb$ by 1, and changes the rotation number by $\p
 % Mention mountain ranges..?
 
 It is known that for any topological knot, the $\tb$ is bounded above \cite{bennequin}, and therefore the \textbf{maximal Thurston-Bennequin number} is a smooth knot invariant, which we denote $\maxtb(K)$.
-For example, the maximal $\tb$ for the unknot is $-1$, as seen in Figure~\ref{fig:unknots}, and all other representatives are (Legendrian isotopic to) stabilizations of the maximal-$tb$ unknot \cite{atlas}.
+For example, the maximal $\tb$ for the unknot is $-1$, as seen in Figure~\ref{fig:unknots}, and all other representatives are (Legendrian isotopic to) stabilizations of the maximal-$\tb$ unknot \cite{atlas}.
 % Give reference for DGA here
-It is possible to determine whether a Legendrian knot is a stabilization using algebraic invariants (\cite{chekanov}), but this does not in general determine $\maxtb$: for example, there exists a Legendrian representative of $m(10_{139})$ with $\tb = -17$ and $\rot = 4$ which is not a stabilization of the maximal-tb representative, which has $\tb = -16$ and $\rot = 1$ \cite{atlas}. Thus we have to look elsewhere to determine $\maxtb$.
+It is possible to determine whether a Legendrian knot is a stabilization using algebraic invariants \cite{chekanov}, but this does not in general determine $\maxtb$: for example, there exists a Legendrian representative of $m(10_{139})$ with $\tb = -17$ and $\rot = 4$ which is not a stabilization of the maximal-$\tb$ representative, which has $\tb = -16$ and $\rot = 1$ \cite{atlas}. Thus we have to look elsewhere to determine $\maxtb$.
 
 \subsection{Polynomial Invariants and Skein Relations}\label{subsec:kauffman}
 
@@ -448,7 +450,7 @@ A number of other obstructions are known to exist.
 First, any Lagrangian cobordism yields a topological cobordism if the cylindrical ends are truncated, so any obstructions to the existence of topological cobordisms also obstructs the existence of Lagrangian cobordisms.
 
 We also note the existence of obstructions to and from specific links. If there exists a Lagrangian cobordism from $\emptyset$ to $K$, there does not exist a Lagrangian cobordism from $K$ to $\emptyset$ \cite{gromov}. Further, if there exists a Lagrangian cobordism from $K$ to the unknot $U$, then $K$ is itself an unknot \cite{cornwell}.
-Other obstructions are derived from Knot Floer holomology (\cite{baldwin}), normal rulings (\cite{cornwell}), and the Chekanov-Eliashberg DGA (\cite{pan}). 
+Other obstructions are derived from Knot Floer holomology \cite{baldwin}, normal rulings \cite{cornwell}, and the Chekanov-Eliashberg DGA \cite{pan}. 
 
 % Include more examples here?
 
