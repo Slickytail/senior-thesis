@@ -6,7 +6,7 @@ It's due in May 2021.
 
 ### FAQ
 
-**Where is the Mathematica code you used to calculate the Kauffman bound?**
+**Where is the Mathematica code you used to calculate the Kauffman bound?**  
 It's in the file `Dubrovnik Pretzel Mathematica.nb` which is a Mathematica notebook.
 
 **Why are you putting this on Github?**  
