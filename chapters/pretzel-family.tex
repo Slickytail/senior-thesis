@@ -2,7 +2,7 @@
 \section{Motivation}\label{sec:motivation}
 There is no general method of finding Lagrangian cobordisms, and there are very few sufficient conditions for their existence.
 A natural way of refining this question is to restrict either $K_-$ or $K_+$.
-In particular, we want to know under what conditions there exists a decomposable cobordism from the unknot $U$ to some Legendrian knot $K$. This choice is not arbitrary: it is unclear whether any of the known obstructions give information about the existence of such cobordisms when $\maxtb K \leq -1$.
+In particular, in this thesis we examine under what conditions there exists a decomposable cobordism from the unknot $U$ to some Legendrian knot $K$. This choice is not arbitrary: it is unclear whether any of the known obstructions give information about the existence of such cobordisms when $\maxtb K \leq -1$.
 
 A good candidate for this search is the class of knots called ribbon knots, which we define here.
 
@@ -21,7 +21,7 @@ This definition is more clear alongside a ribbon diagram, Figure~\ref{fig:ribbon
 \end{figure}
 
 Ribbon knots are a natural class to try to find Lagrangian cobordisms to, as topologically there always exist smooth cobordisms between the unknot and any ribbon knot (recall that the existence of  a Lagrangian cobordism from $K_-$ to $K_+$ implies the existence of a smooth cobordism between the two).
-In the case of Legendrian knots, it is known that ribbon knots admit decomposable Lagrangian cobordisms from sufficiently stabilized unknots \cite{leverson-etnyre}.
+In the case of Legendrian knots, Leverson and Etnyre have shown \cite{leverson-etnyre} that that ribbon knots admit decomposable Lagrangian cobordisms from sufficiently stabilized unknots.
 For a ribbon knot with one band, we can start from a twisted Legendrian unknot, add a second unknot with a 0-handle, and then use Legendrian isotopy to "pass" the tip of the first unknot through the two loops however desired, before finally using a 1-handle to join the ribbon tip to the second unknot, thus closing the knot. 
 
 The cobordism created by these moves is necessarily a concordance: Each 0-handle adds a separate component to the link, and the 1-handle only adds genus if between two points on the same component.
@@ -29,7 +29,7 @@ Thus to construct such a cobordism to a Legendrian ribbon knot $K$, we have to s
 It is an open question when this can be achieved with equality: that is, when a cobordism can be constructed from a stabilized unknot to a maximal-$\tb$ Legendrian ribbon knot.
 
 \section{Constructions of Cobordisms}\label{sec:thm-a-proof}
-The main result of this project, Theorem~\ref{thm:mine}, is the demonstration of an infinite family of knots, each of which has a maximal-$\tb$ Legendrian representative admitting such a Lagrangian concordance from a Legendrian unknot.
+The main result of this project, Theorem~\ref{thm:mine}, is the demonstration of an infinite family of knots, each of which has a maximal-$\tb$ Legendrian representative admitting such a Lagrangian concordance from a Legendrian unknot. We restate the theorem here.
 
 \begin{mythm}\label{thm:mine}
     Let $P_n = P(3, -3, n)$ (the knot shown in Figure~\ref{fig:pretzel-knot}), for $n$ an integer. Then there exists a Legendrian representative $K_n$ of $P_n$, and a Legendrian unknot $U_n$ with ${\tb K_n = \tb U_n = \maxtb P_n}$, such that there is a decomposable Lagrangian concordance from $U_n$ to $K_n$.
@@ -64,7 +64,7 @@ The proof of Theorem~\ref{thm:mine} follows trivially from Lemmas~\ref{lem:tb}~a
 
 \begin{proof}[Proof of Lemma~\ref{lem:tb}]
 
-    We first compute the degree of $a$ in the Kauffman polynomial of $P_n$; as this allows us to obtain a bound on $\maxtb P_n$ by Theorem~\ref{kauffman-bound}. We use the method from \cite{lu-zhong} for computing the Kauffman polynomial of a pretzel knot, and find that $- \deg_a Y(P_n)$ is given by $\min\{-n-4, -1\}$. We implemented this computation in Mathematica; for details see Appendix~\ref{ch:appendix}.
+    We first compute the degree of $a$ in the Kauffman polynomial of $P_n$; as this allows us to obtain a bound on $\maxtb P_n$ by Theorem~\ref{kauffman-bound}. We use Lu and Zhong's method \cite{lu-zhong} for computing the Kauffman polynomial of a pretzel knot, and find that $- \deg_a Y(P_n)$ is given by $\min\{-n-4, -1\}$. We implemented this computation in Mathematica; for details see Appendix~\ref{ch:appendix}.
     
     By Theorem~\ref{thm:ng} (Ng), the Kauffman bound is sharp for the pretzel link $P(3, -3, n)$ except when $n = 0$ or $n = \pm 2$. That is, ${\maxtb P_n = \min\{-n-4, -1\}}$ for $n \neq 0$ and $n \neq \pm 2$. We will deal with these cases presently.
 
@@ -145,7 +145,7 @@ The proof of Theorem~\ref{thm:mine} follows trivially from Lemmas~\ref{lem:tb}~a
 
 \end{proof}
 
-For a few specific $n$, Theorem~\ref{thm:mine} is sufficient to show that all Legendrian representatives of $P_n$ admit Lagrangian cobordisms from the unknot.
+For a few specific $n$, Theorem~\ref{thm:mine} suffices to show that all Legendrian representatives of $P_n$ admit Lagrangian cobordisms from the unknot.
 \begin{corollary}
     All Legendrian representatives of $P_1$, $P_3$, $P_{-3}$, and all but (possibly) one of $P_{-1}$ admit decomposable Lagrangian concordances from stabilized Legendrian unknots.
 \end{corollary}

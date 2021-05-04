@@ -1,31 +1,123 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="6in" height="5in" version="1.1" viewBox="0 0 154 128" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
- <metadata>
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g transform="translate(-12 -25)">
-  <g fill="none" stroke="#000">
-   <g stroke-linecap="square">
-    <path d="m36 86-10-10 25-25h25l25 25-10 10"/>
-    <path d="m41 66 10 10-25 25 10 10"/>
-    <path d="m41 91 10 10-25 25 2.5e-4 13h127l-2e-3 -13-10-10"/>
-    <path d="m41 117 10 10h25l10-10"/>
-    <path d="m86 91-10 10 25 25h25l20-20"/>
-    <path d="m91 112 10-10-25-25 10-10"/>
-    <path d="m91 61 10-10h25l10 10"/>
-    <path d="m36 61-10-10 2.5e-4 -13h127l-2e-3 13-20 20"/>
-    <path d="m142 66 5.1 5.1"/>
-    <path d="m137 112-5.1-5.1"/>
-   </g>
-   <path d="m140 70v13" stroke-dasharray="1, 4" stroke-linejoin="round"/>
-   <path d="m140 108v-13" stroke-dasharray="1, 4" stroke-linejoin="round"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="6.9950948in"
+   height="4.9740262in"
+   version="1.1"
+   viewBox="0 0 179.54077 127.33507"
+   id="svg40"
+   sodipodi:docname="Pretzel Knot.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+  <defs
+     id="defs44" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1536"
+     inkscape:window-height="834"
+     id="namedview42"
+     showgrid="false"
+     fit-margin-left="1"
+     lock-margins="false"
+     fit-margin-top="0.5"
+     fit-margin-right="1"
+     fit-margin-bottom="0.5"
+     inkscape:zoom="0.69375"
+     inkscape:cx="672.74911"
+     inkscape:cy="300.38944"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg40" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     stroke-linecap="square"
+     id="g24"
+     style="fill:none;stroke:#000000"
+     transform="translate(0.37377289,-24.832469)">
+    <path
+       d="M 36,86 26,76 51,51 h 25 l 25,25 -10,10"
+       id="path4" />
+    <path
+       d="m 41,66 10,10 -25,25 10,10"
+       id="path6" />
+    <path
+       d="m 41,91 10,10 -25,25 2.5e-4,13 h 127 l -0.002,-13 -10,-10"
+       id="path8" />
+    <path
+       d="m 41,117 10,10 h 25 l 10,-10"
+       id="path10" />
+    <path
+       d="m 86,91 -10,10 25,25 h 25 l 21.43865,-20.77069"
+       id="path12"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       d="M 91,112 101,102 76,77 86,67"
+       id="path14" />
+    <path
+       d="m 91,61 10,-10 h 25 l 10,10"
+       id="path16" />
+    <path
+       d="M 36,61 26,51 26.00025,38 h 127 l -0.002,13 -20,20"
+       id="path18" />
+    <path
+       d="m 143.27358,66.476086 5.1,5.1"
+       id="path20"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 136.32972,110.65868 -5.1,-5.1"
+       id="path22"
+       sodipodi:nodetypes="cc" />
   </g>
-  <text transform="matrix(1.8 0 0 1.8 -111 -70)" font-family="'Source Serif Pro'" font-size="9.9px" letter-spacing="0px" text-align="center" style="line-height:1.25;shape-inside:url(#rect970);white-space:pre" xml:space="preserve"><tspan x="136.9196" y="91.249676"><tspan font-family="'Source Serif Pro'" font-size="9.9px" font-style="italic">n</tspan></tspan></text>
- </g>
+  <path
+     style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.021;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.33333;stroke-dasharray:2.021, 4.04199;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+     d="m 140.30308,51.665659 0,27.114075"
+     id="path76"
+     sodipodi:nodetypes="cc" />
+  <text
+     xml:space="preserve"
+     style="font-size:54.8082px;line-height:1.25;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.570917;fill:#4d4d4d;fill-opacity:1;"
+     x="191.41142"
+     y="68.363953"
+     id="text903"
+     transform="scale(0.83292891,1.2005827)"><tspan
+       sodipodi:role="line"
+       id="tspan901"
+       x="191.41142"
+       y="68.363953"
+       style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-size:54.8082px;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro Ultra-Light';stroke-width:0.570917;fill:#4d4d4d;fill-opacity:1;">}</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:14.2593px;line-height:1.25;font-family:'Source Serif Pro';-inkscape-font-specification:'Source Serif Pro';text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.267361;fill:#4d4d4d;fill-opacity:1;"
+     x="171.3004"
+     y="66.595619"
+     id="text975"><tspan
+       sodipodi:role="line"
+       id="tspan973"
+       x="171.3004"
+       y="66.595619"
+       style="font-style:italic;font-size:14.2593px;stroke-width:0.267361;fill:#4d4d4d;fill-opacity:1;">n</tspan></text>
 </svg>
